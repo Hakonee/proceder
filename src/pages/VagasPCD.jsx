@@ -1,5 +1,6 @@
 // src/pages/VagasPCD.jsx
 import React from "react";
+import { Link } from 'react-router-dom';
 import "../styles/VagasPCD.css"; // Caminho para o novo CSS
 
 export default function VagasPCD() {
@@ -210,9 +211,9 @@ export default function VagasPCD() {
               <h3>Acessibilidade e Suporte:</h3>
               <p>{vaga.acessibilidade}</p>
             </div>
-            <a href={vaga.linkCandidatura} className="botao-candidatar" target="_blank" rel="noopener noreferrer">
+            <Link to={`/vagas/${vaga.id}`} state={{ vaga }} className="botao-candidatar">
               Candidatar-se
-            </a>
+            </Link>
           </div>
         ))}
       </div>

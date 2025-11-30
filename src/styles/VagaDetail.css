@@ -1,0 +1,70 @@
+.vaga-detail-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+.vaga-detail-header {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 12px;
+  margin-bottom: 18px;
+}
+.vaga-detail-title {
+  font-size: 1.8rem;
+  margin: 0 0 6px 0;
+}
+.vaga-detail-subtitle {
+  color: #555;
+  margin: 0;
+}
+.vaga-detail-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+.vaga-section h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.15rem;
+}
+.vaga-section p, .vaga-section li {
+  color: #333;
+  line-height: 1.5;
+}
+.vaga-section ul {
+  margin: 6px 0 0 18px;
+}
+.vaga-candidatura-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+.vaga-candidatura-form input,
+.vaga-candidatura-form textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 6px;
+}
+.botao-candidatar-detalhe {
+  display: inline-block;
+  background: #2b7de9;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.voltar-link {
+  display: inline-block;
+  margin-top: 18px;
+  color: #2b7de9;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .vaga-detail-container { padding: 14px; margin: 20px; }
+  .vaga-detail-title { font-size: 1.4rem; }
+}

@@ -8,6 +8,7 @@ import Contact from './pages/Contact';
 import Produtos from './pages/Produtos';
 import Projects from './pages/Projects';
 import VagasPCD from './pages/VagasPCD';
+import VagaDetail from './pages/VagaDetail';
 import Services from './pages/Services'; // Importe o novo componente Services
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/produtos" element={<Produtos />} />
           <Route path="/projetos" element={<Projects />} />
           <Route path="/vagas-pcd" element={<VagasPCD />} />
+          <Route path="/vagas/:id" element={<VagaDetail />} />
         </Routes>
       </main>
       <Footer />
