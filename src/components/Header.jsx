@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './../styles/Header.css';
+import logo from '../assets/logo-proceder.png';
 
 function Header() {
   return (
@@ -12,7 +13,7 @@ function Header() {
         <div className="header-top-bar-content">
           <div className="header-logo-content">
             <Link to="/" className="header-logo-link">
-              <img src="/logo-proceder.png" alt="PROCEDER Logo" className="header-logo-img" />
+              <img src={logo} alt="PROCEDER Logo" className="header-logo-img" />
             </Link>
           </div>
         </div>
