@@ -121,10 +121,6 @@ function Contact() {
           <div className="social-media-links">
             <h3 className="social-media-title">Siga-nos</h3>
             <div className="social-icons">
-              <a href="https://linkedin.com/company/proceder" target="_blank" rel="noopener noreferrer" className="social-icon-link">
-                {/* <FontAwesomeIcon icon={faLinkedin} /> */}
-                <span className="social-icon">in</span> {/* Exemplo de texto, substituir por ícone */}
-              </a>
               <a href="https://www.instagram.com/proceder.oficial?igsh=MXN6bnRpMG1oM3kxaw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="social-icon-link">
                 {/* <FontAwesomeIcon icon={faInstagram} /> */}
                 <span className="social-icon">ig</span> {/* Exemplo de texto, substituir por ícone */}
