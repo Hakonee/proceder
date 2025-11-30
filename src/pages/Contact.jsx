@@ -125,7 +125,7 @@ function Contact() {
                 {/* <FontAwesomeIcon icon={faLinkedin} /> */}
                 <span className="social-icon">in</span> {/* Exemplo de texto, substituir por ícone */}
               </a>
-              <a href="https://instagram.com/proceder" target="_blank" rel="noopener noreferrer" className="social-icon-link">
+              <a href="https://www.instagram.com/proceder.oficial?igsh=MXN6bnRpMG1oM3kxaw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="social-icon-link">
                 {/* <FontAwesomeIcon icon={faInstagram} /> */}
                 <span className="social-icon">ig</span> {/* Exemplo de texto, substituir por ícone */}
               </a>
