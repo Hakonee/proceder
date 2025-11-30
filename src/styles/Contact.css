@@ -314,24 +314,103 @@
 }
 
 @media (max-width: 480px) {
+  .contact-page {
+    padding: 20px 10px;
+    max-width: 100%;
+  }
+
+  .contact-header {
+    margin-bottom: 25px;
+  }
+
   .contact-title {
     font-size: 2em;
+    margin-bottom: 10px;
   }
+
   .contact-intro-text {
     font-size: 0.95em;
+    max-width: 100%;
+    line-height: 1.5;
   }
-  .contact-form-container,
-  .contact-info-sidebar {
-    border-radius: 0; /* Remove bordas arredondadas em telas muito pequenas */
-    box-shadow: none; /* Remove sombra */
+
+  .contact-content-wrapper {
+    flex-direction: column;
+    gap: 15px;
   }
+
   .contact-form-container {
-    padding: 20px;
+    flex: 1 1 100%;
+    min-width: auto; /* Remove min-width forçado */
+    max-width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   }
-  .contact-info-sidebar {
-    padding: 20px;
+
+  .form-group {
+    margin-bottom: 12px;
   }
+
+  .form-label {
+    font-size: 0.9em;
+    margin-bottom: 6px;
+  }
+
+  .form-input,
+  .form-textarea {
+    padding: 10px;
+    font-size: 1em;
+  }
+
+  .form-textarea {
+    min-height: 120px;
+  }
+
   .submit-button {
-    max-width: 100%; /* Botão ocupa toda a largura em mobile */
+    padding: 12px 20px;
+    font-size: 0.95em;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .contact-info-sidebar {
+    flex: 1 1 100%;
+    min-width: auto; /* Remove min-width forçado */
+    max-width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .sidebar-title {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+  }
+
+  .sidebar-text {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+  }
+
+  .info-item {
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .info-item h3 {
+    font-size: 0.95em;
+    margin-bottom: 5px;
+  }
+
+  .info-item p {
+    font-size: 0.85em;
+  }
+
+  .social-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 1.1em;
   }
 }

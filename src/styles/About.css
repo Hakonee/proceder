@@ -535,34 +535,85 @@
 }
 
 @media (max-width: 480px) {
+  .page-container {
+    padding: 20px 10px;
+    max-width: 100%;
+  }
+  
   .about-main-title {
     font-size: 2em;
+    margin-bottom: 20px;
   }
   .about-main-title::after {
     width: 80px;
   }
   .section-title {
     font-size: 1.6em;
+    margin-top: 40px;
+    margin-bottom: 20px;
   }
   .section-title::after {
     width: 50px;
   }
 
+  .about-intro-section {
+    padding: 15px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+  }
+
+  .about-intro-flex-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .about-intro-text-block {
     font-size: 0.95em;
+    min-width: auto; /* Remove min-width forçado */
+    flex: 1 1 100%;
   }
+
+  .about-image-block {
+    min-width: auto; /* Remove min-width forçado */
+    flex: 1 1 100%;
+  }
+
   .team-section-title {
     font-size: 1.4em;
+    margin-bottom: 15px;
   }
   .team-photo-wrapper {
     padding-bottom: 80%; /* Ainda mais altura para fotos em mobile */
+    border-radius: 8px;
+  }
+
+  .brand-definition-section {
+    padding: 15px;
+    margin-bottom: 30px;
+  }
+
+  .brand-definition-content {
+    flex-direction: column;
+    gap: 15px;
   }
 
   .brand-definition-img {
-    max-width: 80%;
+    max-width: 90%;
+    margin: 0 auto;
   }
   .brand-definition-text {
     font-size: 0.95em;
+  }
+
+  .color-palette-grid,
+  .typography-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .color-item, .font-item {
+    padding: 15px;
   }
 
   .color-item h3 {
@@ -581,10 +632,16 @@
     font-size: 0.9em;
   }
 
+  .suggestion-section {
+    padding: 15px;
+    margin-top: 30px;
+  }
+
   .suggestion-section p {
     font-size: 1em;
   }
   .contact-link {
+    padding: 10px 20px;
     font-size: 0.95em;
   }
 }

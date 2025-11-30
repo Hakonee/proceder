@@ -661,9 +661,18 @@ body {
   }
   .brand-meaning-block {
     padding: 25px;
+    flex-direction: column;
+    gap: 20px;
   }
   .brand-meaning-img {
     max-width: 90%;
+    min-width: auto;
+    flex: 1 1 100%;
+    margin: 0 auto;
+  }
+  .brand-meaning-text {
+    min-width: auto;
+    flex: 1 1 100%;
   }
   .brand-meaning-text h3 {
     font-size: 1.5em;
