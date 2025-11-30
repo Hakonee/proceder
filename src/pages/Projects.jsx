@@ -49,6 +49,14 @@ const ProjectCard = ({ image, title, description, isLarge = false, 'data-aos': d
 const PhotoCollection = ({ title, photos, 'data-aos': dataAos }) => {
   const [selectedPhoto, setSelectedPhoto] = useState(0);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSelectedPhoto((prev) => (prev + 1) % photos.length);
+    }, 5000); // Muda de imagem a cada 5 segundos
+
+    return () => clearInterval(interval);
+  }, [photos.length]);
+
   return (
     <div className="photo-collection" data-aos={dataAos}>
       <h3 className="collection-title">{title}</h3>
