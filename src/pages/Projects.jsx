@@ -87,53 +87,53 @@ function Projects() {
 
   const projectItems = [
     {
-      image: "../../public/campanha.svg",
+      image: "/campanha.svg",
       title: "Campanha Novembro Azul",
       description: "Evento especial focado na conscientização e saúde masculina, com um toque de inclusão.",
     },
     {
-      image: "../../public/bolsa.svg",
+      image: "/bolsa.svg",
       title: "Ecobags Personalizadas",
       description: "Ecobags com a logo 'PROCEDER: Onde o talento não tem barreiras', promovendo sustentabilidade.",
     },
     {
-      image: "../../public/camisa.svg",
+      image: "/camisa.svg",
       title: "Camisetas Exclusivas",
       description: "Camisetas de alta qualidade reforçando a identidade e o senso de comunidade.",
     },
     {
-      image: "../../public/diversidade.svg",
+      image: "/diversidade.svg",
       title: "Mundo Diverso e Acessível",
       description: "Arte visual destacando a importância de um mundo mais diverso e acessível.",
     },
     {
-      image: "../../public/caneca.svg",
+      image: "/caneca.svg",
       title: "Canecas da Marca",
       description: "Canecas personalizadas com o símbolo de acessibilidade da PROCEDER.",
     },
     {
-      image: "../../public/botoes.svg",
+      image: "/botoes.svg",
       title: "Bottons dos Mascotes",
       description: "Bottons colecionáveis com nossos mascotes, representando diversidade e inclusão.",
     },
     {
-      image: "../../public/saude.svg",
+      image: "/saude.svg",
       title: "Conscientização e Saúde",
       description: "Peça da campanha Novembro Azul, focada na prevenção e saúde do homem.",
     },
     {
-      image: "../../public/logo-proceder.png",
+      image: "/logo-proceder.png",
       title: "Definição da Marca PROCEDER",
       description: "Logo une o 'C' de PROCEDER ao símbolo de acessibilidade, representando movimento e inclusão.",
       isLarge: true,
     },
     {
-      image: "../../public/PaletaCores.svg",
+      image: "/PaletaCores.svg",
       title: "Paleta de Cores da PROCEDER",
       description: "Verde-Água, Azul e Amarelo representam Renovação, Confiança e Potencial.",
     },
     {
-      image: "../../public/tipografia.svg",
+      image: "/tipografia.svg",
       title: "Tipografia da Marca",
       description: "League Spartan e Poppins refletem força, acessibilidade e modernidade.",
     },
@@ -269,21 +269,21 @@ function Projects() {
         </p>
         <div className="mascots-grid">
           <div className="mascot-item" data-aos="zoom-in" data-aos-delay="0">
-            <img src="../../public/Cristian.svg" alt="Mascote com bengala" className="mascot-image" />
+            <img src="/Cristian.svg" alt="Mascote com bengala" className="mascot-image" />
             <h3 className="mascot-name">Cristian</h3>
             <p className="mascot-description">
               Representa a visão e a superação. Mostra que a percepção vai além do que os olhos veem.
             </p>
           </div>
           <div className="mascot-item" data-aos="zoom-in" data-aos-delay="200">
-            <img src="../../public/Patricia.svg" alt="Mascote cadeirante" className="mascot-image" />
+            <img src="/Patricia.svg" alt="Mascote cadeirante" className="mascot-image" />
             <h3 className="mascot-name">Patricia</h3>
             <p className="mascot-description">
               Simboliza mobilidade e independência. Mostra que barreiras físicas podem ser superadas.
             </p>
           </div>
           <div className="mascot-item" data-aos="zoom-in" data-aos-delay="400">
-            <img src="../../public/Diana.svg" alt="Mascote mulher" className="mascot-image" />
+            <img src="/Diana.svg" alt="Mascote mulher" className="mascot-image" />
             <h3 className="mascot-name">Diana</h3>
             <p className="mascot-description">
               Representa força e voz. Luta por igualdade e espaço para todos.
