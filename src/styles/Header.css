@@ -66,3 +66,65 @@
 .nav-link:hover {
   color: var(--proceder-verde-agua);
 }
+
+/* Media Queries para Responsividade Mobile */
+
+/* Tablets e tablets pequenos (até 768px) */
+@media (max-width: 768px) {
+  .header-logo-img {
+    height: 70px;
+  }
+
+  .nav-list {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 8px 0;
+  }
+
+  .nav-link {
+    font-size: 0.9em;
+  }
+}
+
+/* Celulares (até 480px) */
+@media (max-width: 480px) {
+  .header-top-bar-content {
+    padding: 15px 0;
+    margin: 10px auto 0 auto;
+  }
+
+  .header-logo-content {
+    padding: 0 10px;
+  }
+
+  .header-logo-img {
+    height: 60px;
+  }
+
+  .header-nav-content {
+    padding: 0 10px;
+  }
+
+  .nav-list {
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5px 0;
+  }
+
+  .nav-item {
+    flex: 0 1 auto;
+  }
+
+  .nav-link {
+    font-size: 0.75em;
+    white-space: nowrap;
+    display: inline-block;
+    padding: 5px 8px;
+  }
+
+  .header-nav-bar-wrapper {
+    padding: 10px 0;
+  }
+}
