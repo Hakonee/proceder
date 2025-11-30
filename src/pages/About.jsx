@@ -4,6 +4,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; // Importa os estilos do AOS
 import './../styles/About.css'; // Importa os estilos específicos da About
 import { Link } from 'react-router-dom'; // Importa Link para a seção de sugestão
+import equipe from '../assets/equipe.jpg';
+import simbolo from '../assets/simbolo.png';
 
 function About() {
   useEffect(() => {
@@ -32,7 +34,7 @@ function About() {
             <h2 className="team-section-title">Nossa Equipe</h2>
             <div className="team-photo-wrapper">
               <img
-                src="/equipe.jpg" // Caminho ajustado para a pasta public
+                src={equipe}
                 alt="Equipe da PROCEDER"
                 className="team-photo-reveal"
               />
@@ -46,7 +48,7 @@ function About() {
         <h2 className="section-title" data-aos="fade-up">Definição da Marca</h2>
         <div className="brand-definition-content">
           <img
-            src="/simbolo.png" // Caminho ajustado para a pasta public
+            src={simbolo}
             alt="Logo PROCEDER e símbolo de acessibilidade"
             className="brand-definition-img"
             data-aos="zoom-in" data-aos-delay="200"

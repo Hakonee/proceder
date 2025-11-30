@@ -4,6 +4,36 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './../styles/Projects.css';
 
+// Importar todas as imagens
+import campanha from '../assets/campanha.svg';
+import bolsa from '../assets/bolsa.svg';
+import camisa from '../assets/camisa.svg';
+import diversidade from '../assets/diversidade.svg';
+import caneca from '../assets/caneca.svg';
+import botoes from '../assets/botoes.svg';
+import saude from '../assets/saude.svg';
+import logoProc from '../assets/logo-proceder.png';
+import paleta from '../assets/PaletaCores.svg';
+import tipografia from '../assets/tipografia.svg';
+import cristian from '../assets/Cristian.svg';
+import patricia from '../assets/Patricia.svg';
+import diana from '../assets/Diana.svg';
+import cartas1 from '../assets/projeto/cartas.jpg';
+import cartas2 from '../assets/projeto/cartas2.jpg';
+import cartas3 from '../assets/projeto/cartas3.jpg';
+import cartas4 from '../assets/projeto/cartas4.JPG';
+import cartas5 from '../assets/projeto/cartas5.JPG';
+import massinha1 from '../assets/projeto/dinamicaMassinha1.jpg';
+import massinha2 from '../assets/projeto/dinamicaMassinha2.jpg';
+import massinha3 from '../assets/projeto/dinamicaMassinha3.JPG';
+import massinha4 from '../assets/projeto/dinamicaMassinha4.jpg';
+import massinha5 from '../assets/projeto/dinamicaMassinha5.jpg';
+import massinha6 from '../assets/projeto/dinamicaMassinha6.jpg';
+import divulgacao from '../assets/projeto/divulgacaoPoster.jpg';
+import membros from '../assets/projeto/membrosProceder.jpg';
+import selo from '../assets/projeto/seloProceder.jpg';
+import turma from '../assets/projeto/turma.jpg';
+
 // Componente ProjectCard (mantido)
 const ProjectCard = ({ image, title, description, isLarge = false, 'data-aos': dataAos, 'data-aos-delay': dataAosDelay }) => (
   <div className={`project-card ${isLarge ? 'project-card-large' : ''}`} data-aos={dataAos} data-aos-delay={dataAosDelay}>
@@ -87,53 +117,53 @@ function Projects() {
 
   const projectItems = [
     {
-      image: "/campanha.svg",
+      image: campanha,
       title: "Campanha Novembro Azul",
       description: "Evento especial focado na conscientização e saúde masculina, com um toque de inclusão.",
     },
     {
-      image: "/bolsa.svg",
+      image: bolsa,
       title: "Ecobags Personalizadas",
       description: "Ecobags com a logo 'PROCEDER: Onde o talento não tem barreiras', promovendo sustentabilidade.",
     },
     {
-      image: "/camisa.svg",
+      image: camisa,
       title: "Camisetas Exclusivas",
       description: "Camisetas de alta qualidade reforçando a identidade e o senso de comunidade.",
     },
     {
-      image: "/diversidade.svg",
+      image: diversidade,
       title: "Mundo Diverso e Acessível",
       description: "Arte visual destacando a importância de um mundo mais diverso e acessível.",
     },
     {
-      image: "/caneca.svg",
+      image: caneca,
       title: "Canecas da Marca",
       description: "Canecas personalizadas com o símbolo de acessibilidade da PROCEDER.",
     },
     {
-      image: "/botoes.svg",
+      image: botoes,
       title: "Bottons dos Mascotes",
       description: "Bottons colecionáveis com nossos mascotes, representando diversidade e inclusão.",
     },
     {
-      image: "/saude.svg",
+      image: saude,
       title: "Conscientização e Saúde",
       description: "Peça da campanha Novembro Azul, focada na prevenção e saúde do homem.",
     },
     {
-      image: "/logo-proceder.png",
+      image: logoProc,
       title: "Definição da Marca PROCEDER",
       description: "Logo une o 'C' de PROCEDER ao símbolo de acessibilidade, representando movimento e inclusão.",
       isLarge: true,
     },
     {
-      image: "/PaletaCores.svg",
+      image: paleta,
       title: "Paleta de Cores da PROCEDER",
       description: "Verde-Água, Azul e Amarelo representam Renovação, Confiança e Potencial.",
     },
     {
-      image: "/tipografia.svg",
+      image: tipografia,
       title: "Tipografia da Marca",
       description: "League Spartan e Poppins refletem força, acessibilidade e modernidade.",
     },
@@ -148,32 +178,32 @@ function Projects() {
     {
       title: "Dinâmica com Cartas",
       photos: [
-        { src: "/projeto/cartas.jpg", alt: "Dinâmica com cartas - momento 1", caption: "Momento de integração com dinâmica de cartas" },
-        { src: "/projeto/cartas2.jpg", alt: "Dinâmica com cartas - momento 2", caption: "Participantes compartilhando experiências" },
-        { src: "/projeto/cartas3.jpg", alt: "Dinâmica com cartas - momento 3", caption: "Reflexões e aprendizado em grupo" },
-        { src: "/projeto/cartas4.JPG", alt: "Dinâmica com cartas - momento 4", caption: "Conexões sendo criadas através das cartas" },
-        { src: "/projeto/cartas5.JPG", alt: "Dinâmica com cartas - momento 5", caption: "Momentos de descontração e união" },
+        { src: cartas1, alt: "Dinâmica com cartas - momento 1", caption: "Momento de integração com dinâmica de cartas" },
+        { src: cartas2, alt: "Dinâmica com cartas - momento 2", caption: "Participantes compartilhando experiências" },
+        { src: cartas3, alt: "Dinâmica com cartas - momento 3", caption: "Reflexões e aprendizado em grupo" },
+        { src: cartas4, alt: "Dinâmica com cartas - momento 4", caption: "Conexões sendo criadas através das cartas" },
+        { src: cartas5, alt: "Dinâmica com cartas - momento 5", caption: "Momentos de descontração e união" },
       ]
     },
     {
       title: "Oficina de Massinha",
       photos: [
-        { src: "/projeto/dinamicaMassinha1.jpg", alt: "Oficina com massinha - momento 1", caption: "Criatividade em ação: dinâmica com massinha" },
-        { src: "/projeto/dinamicaMassinha2.jpg", alt: "Oficina com massinha - momento 2", caption: "Expressão artística e inclusão" },
-        { src: "/projeto/dinamicaMassinha3.JPG", alt: "Oficina com massinha - momento 3", caption: "Trabalho em equipe e diversão" },
-        { src: "/projeto/dinamicaMassinha4.jpg", alt: "Oficina com massinha - momento 4", caption: "Desenvolvendo habilidades motoras" },
-        { src: "/projeto/dinamicaMassinha5.jpg", alt: "Oficina com massinha - momento 5", caption: "Arte sem barreiras" },
-        { src: "/projeto/dinamicaMassinha6.jpg", alt: "Oficina com massinha - momento 6", caption: "Celebrando as criações coletivas" },
+        { src: massinha1, alt: "Oficina com massinha - momento 1", caption: "Criatividade em ação: dinâmica com massinha" },
+        { src: massinha2, alt: "Oficina com massinha - momento 2", caption: "Expressão artística e inclusão" },
+        { src: massinha3, alt: "Oficina com massinha - momento 3", caption: "Trabalho em equipe e diversão" },
+        { src: massinha4, alt: "Oficina com massinha - momento 4", caption: "Desenvolvendo habilidades motoras" },
+        { src: massinha5, alt: "Oficina com massinha - momento 5", caption: "Arte sem barreiras" },
+        { src: massinha6, alt: "Oficina com massinha - momento 6", caption: "Celebrando as criações coletivas" },
       ]
     }
   ];
 
   // Fotos individuais (não agrupadas em coleções)
   const individualPhotos = [
-    { src: "/projeto/divulgacaoPoster.jpg", alt: "Poster de divulgação do projeto", caption: "Material de divulgação do projeto" },
-    { src: "/projeto/membrosProceder.jpg", alt: "Membros da PROCEDER no projeto", caption: "Nossa equipe em ação" },
-    { src: "/projeto/seloProceder.jpg", alt: "Selo PROCEDER no evento", caption: "Marca PROCEDER presente no evento" },
-    { src: "/projeto/turma.jpg", alt: "Foto da turma participante", caption: "Todos juntos: participantes e equipe" },
+    { src: divulgacao, alt: "Poster de divulgação do projeto", caption: "Material de divulgação do projeto" },
+    { src: membros, alt: "Membros da PROCEDER no projeto", caption: "Nossa equipe em ação" },
+    { src: selo, alt: "Selo PROCEDER no evento", caption: "Marca PROCEDER presente no evento" },
+    { src: turma, alt: "Foto da turma participante", caption: "Todos juntos: participantes e equipe" },
   ];
 
   return (
@@ -269,21 +299,21 @@ function Projects() {
         </p>
         <div className="mascots-grid">
           <div className="mascot-item" data-aos="zoom-in" data-aos-delay="0">
-            <img src="/Cristian.svg" alt="Mascote com bengala" className="mascot-image" />
+            <img src={cristian} alt="Mascote com bengala" className="mascot-image" />
             <h3 className="mascot-name">Cristian</h3>
             <p className="mascot-description">
               Representa a visão e a superação. Mostra que a percepção vai além do que os olhos veem.
             </p>
           </div>
           <div className="mascot-item" data-aos="zoom-in" data-aos-delay="200">
-            <img src="/Patricia.svg" alt="Mascote cadeirante" className="mascot-image" />
+            <img src={patricia} alt="Mascote cadeirante" className="mascot-image" />
             <h3 className="mascot-name">Patricia</h3>
             <p className="mascot-description">
               Simboliza mobilidade e independência. Mostra que barreiras físicas podem ser superadas.
             </p>
           </div>
           <div className="mascot-item" data-aos="zoom-in" data-aos-delay="400">
-            <img src="/Diana.svg" alt="Mascote mulher" className="mascot-image" />
+            <img src={diana} alt="Mascote mulher" className="mascot-image" />
             <h3 className="mascot-name">Diana</h3>
             <p className="mascot-description">
               Representa força e voz. Luta por igualdade e espaço para todos.

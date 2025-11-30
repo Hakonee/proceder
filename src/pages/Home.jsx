@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Importa os estilos do AOS
 import './../styles/Home.css'; // Importa os estilos específicos da Home
+import simbolo from '../assets/simbolo.png';
 
 function Home() {
   useEffect(() => {
@@ -44,7 +45,7 @@ function Home() {
           </p>
           <div className="brand-meaning-block" data-aos="fade-up" data-aos-delay="400">
             <img
-              src="/simbolo.png" // Caminho ajustado para a pasta public
+              src={simbolo}
               alt="Definição da Marca PROCEDER"
               className="brand-meaning-img"
             />
