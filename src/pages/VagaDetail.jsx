@@ -56,9 +56,13 @@ export default function VagaDetail() {
           <section className="vaga-section vaga-responsabilidades">
             <h2>Responsabilidades</h2>
             <ul>
-              {vaga.responsabilidades.map((r, i) => (
-                <li key={i}>{r}</li>
-              ))}
+              {(vaga.responsabilidades || []).length > 0 ? (
+                (vaga.responsabilidades || []).map((r, i) => (
+                  <li key={i}>{r}</li>
+                ))
+              ) : (
+                <li>Responsabilidades não especificadas (fictício).</li>
+              )}
             </ul>
           </section>
         )}
@@ -67,9 +71,13 @@ export default function VagaDetail() {
           <section className="vaga-section vaga-requisitos">
             <h2>Requisitos</h2>
             <ul>
-              {vaga.requisitos.map((r, i) => (
-                <li key={i}>{r}</li>
-              ))}
+              {(vaga.requisitos || []).length > 0 ? (
+                (vaga.requisitos || []).map((r, i) => (
+                  <li key={i}>{r}</li>
+                ))
+              ) : (
+                <li>Requisitos não especificados (fictício).</li>
+              )}
             </ul>
           </section>
         )}
@@ -77,19 +85,29 @@ export default function VagaDetail() {
         {activeTab === 'beneficios' && (
           <section className="vaga-section vaga-acessibilidade">
             <h2>Acessibilidade e Benefícios</h2>
-            <p>{vaga.acessibilidade}</p>
+            <p>{vaga.acessibilidade || 'Informações de acessibilidade não fornecidas (fictício).'}</p>
 
             <h3 className="timeline-title">Linha do tempo dos benefícios</h3>
             <ol className="benefits-timeline">
-              {vaga.beneficios.map((b, i) => (
-                <li key={i} className="timeline-item">
+              {(vaga.beneficios || []).length > 0 ? (
+                (vaga.beneficios || []).map((b, i) => (
+                  <li key={i} className="timeline-item">
+                    <div className="timeline-marker" />
+                    <div className="timeline-content">
+                      <strong>{i+1}. {b}</strong>
+                      <p>Implementação prevista: { (i+1) * 3 } meses após contratação (simulado).</p>
+                    </div>
+                  </li>
+                ))
+              ) : (
+                <li className="timeline-item">
                   <div className="timeline-marker" />
                   <div className="timeline-content">
-                    <strong>{i+1}. {b}</strong>
-                    <p>Implementação prevista: { (i+1) * 3 } meses após contratação (simulado).</p>
+                    <strong>Benefícios não especificados (fictício)</strong>
+                    <p>Detalhes disponíveis mediante contato.</p>
                   </div>
                 </li>
-              ))}
+              )}
             </ol>
           </section>
         )}
