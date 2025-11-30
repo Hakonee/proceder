@@ -103,17 +103,22 @@ function Contact() {
             <div className="contact-detail-item">
               {/* <FontAwesomeIcon icon={faEnvelope} className="contact-icon" /> */}
               <span className="contact-icon">✉️</span>
-              <a href="mailto:contato@proceder.com.br" className="contact-link"> equipeproceder2025@gmail.com</a>
+              <a href="mailto:equipeproceder2025@gmail.com" className="contact-link">equipeproceder2025@gmail.com</a>
             </div>
             <div className="contact-detail-item">
               {/* <FontAwesomeIcon icon={faPhone} className="contact-icon" /> */}
               <span className="contact-icon">📞</span>
-              <a href="tel:+55XXYYYYXXXX" className="contact-link">(19) 5555-1234</a>
+              <a href="tel:+551955551234" className="contact-link">(19) 5555-1234</a>
+            </div>
+            <div className="contact-detail-item">
+              {/* <FontAwesomeIcon icon={faPhone} className="contact-icon" /> */}
+              <span className="contact-icon">☎️</span>
+              <a href="tel:08007770000" className="contact-link">SAC: 0800 777 0000</a>
             </div>
             <div className="contact-detail-item">
               {/* <FontAwesomeIcon icon={faMapMarkerAlt} className="contact-icon" /> */}
               <span className="contact-icon">📍</span>
-              <span className="contact-text">Endereço da PROCEDER</span>
+              <span className="contact-text">Rua Azárias de Melo N342, Taquaral - Campinas</span>
             </div>
           </div>
 
