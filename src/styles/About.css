@@ -1,0 +1,668 @@
+/* src/styles/About.css */
+
+/* Importar as variáveis globais de cores e fontes, se não estiverem já no global.css */
+/* @import './global.css'; */ /* Certifique-se de que as variáveis :root estão acessíveis */
+
+/* Variáveis de Cores (se não estiverem definidas globalmente) */
+:root {
+  --proceder-verde-agua: #34BAA8;
+  --proceder-azul: #3775B1;
+  --proceder-amarelo: #FECC5E;
+  --text-color-dark: #333;
+  --text-color-medium: #555;
+  --text-color-light: #666; /* Ajustado para um tom um pouco mais escuro */
+  --background-light: #f9f9f9;
+  --background-medium: #f0f0f0; /* Adicionado para fundos de seção */
+  --border-light: #eee;
+  --font-league-spartan: 'League Spartan', sans-serif; /* Adicionado para consistência */
+  --font-poppins: 'Poppins', sans-serif; /* Adicionado para consistência */
+}
+
+/* Estilos Gerais da Página */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px; /* Mais padding para respiro */
+  box-sizing: border-box; /* Garante que padding não aumente a largura */
+}
+
+.about-main-title {
+  font-family: var(--font-league-spartan);
+  font-size: 3.8em; /* Aumentado para maior impacto */
+  font-weight: 700;
+  color: var(--proceder-azul);
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative; /* Para o pseudo-elemento */
+  padding-bottom: 15px; /* Espaço para o sublinhado */
+}
+
+.about-main-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 150px; /* Largura do sublinhado */
+  height: 5px;
+  background-color: var(--proceder-verde-agua);
+  border-radius: 2px;
+}
+
+.section-title {
+  font-family: var(--font-league-spartan);
+  font-size: 2.8em; /* Aumentado */
+  font-weight: 600;
+  color: var(--proceder-azul);
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  position: relative; /* Para o pseudo-elemento */
+  padding-bottom: 10px; /* Espaço para o sublinhado */
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px; /* Largura do sublinhado */
+  height: 3px;
+  background-color: var(--proceder-amarelo);
+  border-radius: 2px;
+}
+
+/* Seção 1: Introdução e Foto da Equipe */
+.about-intro-section {
+  margin-bottom: 100px; /* Mais espaçamento */
+  background-color: var(--background-light); /* Fundo suave */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.about-intro-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px; /* Mais espaço entre os itens */
+  align-items: center; /* Alinha verticalmente ao centro */
+}
+
+.about-intro-text-block {
+  flex: 1;
+  min-width: 350px; /* Aumentado para melhor leitura */
+  font-family: var(--font-poppins);
+  font-size: 1.15em; /* Ligeiramente maior */
+  line-height: 1.8; /* Melhor legibilidade */
+  color: var(--text-color-medium);
+}
+
+.about-intro-text-block p {
+  margin-bottom: 20px; /* Mais espaço entre parágrafos */
+}
+
+.about-image-block {
+  flex: 1.2; /* Ajustado para dar mais espaço à imagem */
+  min-width: 400px; /* Aumentado */
+  text-align: center;
+}
+
+.team-section-title {
+  font-family: var(--font-league-spartan); /* Usando League Spartan para títulos */
+  font-size: 2em; /* Aumentado */
+  color: var(--proceder-azul);
+  margin-bottom: 25px;
+}
+
+.team-photo-wrapper {
+  margin: 0 auto;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px; /* Mais arredondado */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18); /* Sombra mais proeminente */
+  padding-bottom: 60%; /* Proporção ligeiramente diferente para mais altura */
+  height: 0;
+  background-color: var(--background-medium); /* Fundo para carregamento */
+}
+
+.team-photo-reveal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 15px; /* Consistente com o wrapper */
+
+  clip-path: inset(50% 50% 50% 50%);
+  animation: revealImageFromCenter 1.8s ease-out forwards; /* Animação mais rápida */
+  animation-delay: 0.3s; /* Atraso menor */
+}
+
+@keyframes revealImageFromCenter {
+  0% {
+    clip-path: inset(50% 50% 50% 50%);
+  }
+  100% {
+    clip-path: inset(0% 0% 0% 0%);
+  }
+}
+
+.team-photo-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 6px solid var(--proceder-verde-agua); /* Borda mais grossa */
+  border-radius: 15px; /* Consistente */
+  box-sizing: border-box;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeInBorder 0.6s ease-out forwards; /* Animação mais rápida */
+  animation-delay: 1.8s; /* Atraso ajustado */
+}
+
+@keyframes fadeInBorder {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Seção 2: Definição da Marca */
+.brand-definition-section {
+  background-color: var(--background-medium); /* Fundo mais distinto */
+  padding: 70px 20px; /* Mais padding */
+  border-radius: 20px; /* Mais arredondado */
+  margin-bottom: 100px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Sombra mais suave */
+}
+
+.brand-definition-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px; /* Mais espaço */
+  max-width: 1000px; /* Aumentado */
+  margin: 0 auto;
+}
+
+.brand-definition-img {
+  max-width: 45%; /* Ajuste a largura da imagem */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.brand-definition-img:hover {
+  transform: scale(1.03);
+}
+
+.brand-definition-text {
+  font-family: var(--font-poppins);
+  font-size: 1.1em;
+  line-height: 1.7;
+  color: var(--text-color-medium);
+  text-align: center;
+  flex: 1; /* Permite que o texto ocupe o espaço restante */
+}
+
+/* Seção 3: Paleta de Cores */
+.color-palette-section {
+  margin-bottom: 100px;
+}
+
+.color-palette-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px; /* Mais espaço */
+  justify-content: center;
+}
+
+.color-item {
+  background-color: #fff;
+  border-radius: 15px; /* Mais arredondado */
+  padding: 30px; /* Mais padding */
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Sombra mais proeminente */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.color-item:hover {
+  transform: translateY(-8px); /* Efeito de "levantar" */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.color-box {
+  width: 100px; /* Maior */
+  height: 100px; /* Maior */
+  border-radius: 50%;
+  margin: 0 auto 25px auto; /* Mais espaço */
+  border: 4px solid rgba(0, 0, 0, 0.08); /* Borda mais visível */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra interna */
+}
+
+.color-box.green-water { background-color: var(--proceder-verde-agua); }
+.color-box.blue { background-color: var(--proceder-azul); }
+.color-box.yellow { background-color: var(--proceder-amarelo); }
+
+.color-item h3 {
+  font-family: var(--font-league-spartan); /* Consistência */
+  font-size: 1.5em; /* Maior */
+  color: var(--proceder-azul); /* Cor da marca */
+  margin-bottom: 12px;
+}
+
+.color-item p {
+  font-family: var(--font-poppins);
+  font-size: 1em; /* Ligeiramente maior */
+  line-height: 1.7;
+  color: var(--text-color-light);
+}
+
+/* Seção 4: Tipografia */
+.typography-section {
+  margin-bottom: 100px;
+}
+
+.typography-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Ajustado */
+  gap: 50px; /* Mais espaço */
+  justify-content: center;
+}
+
+.font-item {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 35px; /* Mais padding */
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.font-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.font-example {
+  font-size: 5em; /* Muito maior para destaque */
+  margin-bottom: 25px;
+  font-weight: bold;
+  color: var(--proceder-verde-agua); /* Cor de destaque */
+  line-height: 1; /* Ajusta a altura da linha para não cortar */
+}
+
+.font-example.league-spartan {
+  font-family: var(--font-league-spartan);
+}
+
+.font-example.poppins {
+  font-family: var(--font-poppins);
+}
+
+.font-item h3 {
+  font-family: var(--font-league-spartan);
+  font-size: 1.8em; /* Maior */
+  color: var(--proceder-azul);
+  margin-bottom: 15px;
+}
+
+.font-item p {
+  font-family: var(--font-poppins);
+  font-size: 1em;
+  line-height: 1.7;
+  color: var(--text-color-light);
+}
+
+/* Seção de Sugestão */
+.suggestion-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: var(--background-light);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-top: 80px;
+}
+
+.suggestion-section p {
+  font-family: var(--font-poppins);
+  font-size: 1.2em;
+  color: var(--text-color-medium);
+  margin-bottom: 20px;
+}
+
+.contact-link {
+  display: inline-block;
+  background-color: var(--proceder-amarelo);
+  color: var(--text-color-dark);
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-family: var(--font-league-spartan);
+  font-size: 1.1em;
+  font-weight: 700;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-link:hover {
+  background-color: #fdd87e; /* Um tom mais claro de amarelo */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ============================================
+   MEDIA QUERIES PARA RESPONSIVIDADE
+   ============================================ */
+
+@media (min-width: 768px) {
+  .brand-definition-content {
+    flex-direction: row; /* Lado a lado em telas maiores */
+    text-align: left;
+    align-items: center;
+  }
+  .brand-definition-img {
+    max-width: 40%; /* Ajuste a largura da imagem */
+    margin-right: 40px; /* Espaço entre imagem e texto */
+  }
+  .brand-definition-text {
+    text-align: left;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-main-title {
+    font-size: 3em;
+  }
+  .section-title {
+    font-size: 2.2em;
+  }
+
+  .about-intro-flex-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .about-intro-text-block,
+  .about-image-block {
+    flex: none;
+    width: 100%;
+    max-width: 600px; /* Limita a largura em telas médias */
+  }
+
+  .team-section-title {
+    font-size: 1.8em;
+  }
+  .team-photo-wrapper {
+    padding-bottom: 65%; /* Ajusta proporção para telas menores */
+  }
+
+  .brand-definition-img {
+    max-width: 50%;
+  }
+
+  .color-palette-grid,
+  .typography-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+
+  .color-item, .font-item {
+    padding: 25px;
+  }
+  .color-box {
+    width: 80px;
+    height: 80px;
+  }
+  .font-example {
+    font-size: 4em;
+  }
+  .font-item h3 {
+    font-size: 1.6em;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: 40px 15px;
+  }
+  .about-main-title {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+  }
+  .about-main-title::after {
+    width: 100px;
+  }
+  .section-title {
+    font-size: 1.8em;
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+  .section-title::after {
+    width: 60px;
+  }
+
+  .about-intro-section {
+    padding: 30px;
+    margin-bottom: 80px;
+  }
+  .about-intro-flex-container {
+    gap: 30px;
+  }
+  .about-intro-text-block {
+    font-size: 1em;
+    line-height: 1.7;
+  }
+  .team-section-title {
+    font-size: 1.6em;
+  }
+  .team-photo-wrapper {
+    padding-bottom: 70%; /* Mais altura em mobile */
+    border-radius: 10px;
+  }
+  .team-photo-reveal, .team-photo-wrapper::before {
+    border-radius: 10px;
+  }
+
+  .brand-definition-section {
+    padding: 50px 15px;
+    margin-bottom: 80px;
+  }
+  .brand-definition-content {
+    flex-direction: column; /* Sempre coluna em mobile */
+    gap: 30px;
+  }
+  .brand-definition-img {
+    max-width: 70%; /* Ajustado para mobile */
+    margin-right: 0;
+  }
+  .brand-definition-text {
+    font-size: 1em;
+    text-align: center;
+  }
+
+  .color-palette-grid,
+  .typography-grid {
+    grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+    gap: 25px;
+  }
+
+  .color-item, .font-item {
+    padding: 20px;
+  }
+  .color-box {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 15px;
+  }
+  .color-item h3 {
+    font-size: 1.3em;
+  }
+  .color-item p {
+    font-size: 0.95em;
+  }
+  .font-example {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+  }
+  .font-item h3 {
+    font-size: 1.4em;
+  }
+  .font-item p {
+    font-size: 0.95em;
+  }
+
+  .suggestion-section {
+    padding: 40px 15px;
+    margin-top: 60px;
+  }
+  .suggestion-section p {
+    font-size: 1.1em;
+  }
+  .contact-link {
+    padding: 10px 25px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-main-title {
+    font-size: 2em;
+  }
+  .about-main-title::after {
+    width: 80px;
+  }
+  .section-title {
+    font-size: 1.6em;
+  }
+  .section-title::after {
+    width: 50px;
+  }
+
+  .about-intro-text-block {
+    font-size: 0.95em;
+  }
+  .team-section-title {
+    font-size: 1.4em;
+  }
+  .team-photo-wrapper {
+    padding-bottom: 80%; /* Ainda mais altura para fotos em mobile */
+  }
+
+  .brand-definition-img {
+    max-width: 80%;
+  }
+  .brand-definition-text {
+    font-size: 0.95em;
+  }
+
+  .color-item h3 {
+    font-size: 1.2em;
+  }
+  .color-item p {
+    font-size: 0.9em;
+  }
+  .font-example {
+    font-size: 3em;
+  }
+  .font-item h3 {
+    font-size: 1.2em;
+  }
+  .font-item p {
+    font-size: 0.9em;
+  }
+
+  .suggestion-section p {
+    font-size: 1em;
+  }
+  .contact-link {
+    font-size: 0.95em;
+  }
+}
+
+
+/* ============================================
+   MODO DE ALTO CONTRASTE
+   ============================================ */
+
+body.high-contrast-mode .page-container {
+  background-color: black !important;
+  color: white !important;
+}
+
+body.high-contrast-mode .about-main-title,
+body.high-contrast-mode .section-title,
+body.high-contrast-mode .team-section-title,
+body.high-contrast-mode .color-item h3,
+body.high-contrast-mode .font-item h3 {
+  color: white !important;
+}
+
+body.high-contrast-mode .about-intro-text-block p,
+body.high-contrast-mode .brand-definition-text,
+body.high-contrast-mode .color-item p,
+body.high-contrast-mode .font-item p,
+body.high-contrast-mode .suggestion-section p {
+  color: white !important;
+}
+
+body.high-contrast-mode .about-main-title::after,
+body.high-contrast-mode .section-title::after {
+  background-color: var(--proceder-amarelo) !important;
+}
+
+body.high-contrast-mode .about-intro-section,
+body.high-contrast-mode .brand-definition-section,
+body.high-contrast-mode .color-item,
+body.high-contrast-mode .font-item,
+body.high-contrast-mode .suggestion-section {
+  background-color: #333 !important;
+  box-shadow: 0 0 10px var(--proceder-amarelo) !important;
+  border: 1px solid var(--proceder-amarelo) !important;
+}
+
+body.high-contrast-mode .team-photo-wrapper {
+  background-color: #555 !important;
+  box-shadow: 0 0 15px var(--proceder-amarelo) !important;
+  border: 1px solid var(--proceder-amarelo) !important;
+}
+
+body.high-contrast-mode .team-photo-wrapper::before {
+  border-color: var(--proceder-amarelo) !important;
+}
+
+body.high-contrast-mode .brand-definition-img {
+  box-shadow: 0 0 10px var(--proceder-amarelo) !important;
+  border: 1px solid var(--proceder-amarelo) !important;
+}
+
+body.high-contrast-mode .color-box {
+  border-color: white !important;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2) !important;
+}
+
+body.high-contrast-mode .font-example {
+  color: var(--proceder-amarelo) !important;
+}
+
+body.high-contrast-mode .contact-link {
+  background-color: var(--proceder-amarelo) !important;
+  color: black !important;
+  box-shadow: 0 0 8px white !important;
+  border: 1px solid white !important;
+}
+
+body.high-contrast-mode .contact-link:hover {
+  background-color: white !important;
+  color: black !important;
+  box-shadow: 0 0 12px var(--proceder-amarelo) !important;
+}

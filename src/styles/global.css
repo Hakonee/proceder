@@ -1,0 +1,90 @@
+/* src/styles/global.css */
+
+/* Importar as fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins:wght@400;500;700&display=swap');
+
+/* Definir variáveis CSS para as cores da marca PROCEDER */
+:root {
+  --proceder-verde-agua: #34BAA8;
+  --proceder-azul: #3775B1;
+  --proceder-amarelo: #FECC5E;
+
+  /* Definir fontes */
+  --font-league-spartan: 'League Spartan', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+}
+
+/* src/styles/global.css */
+
+body {
+  margin: 0;
+  font-family: var(--font-poppins);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333;
+  background-color: #f4f7f6; /* Fundo base da página */
+
+  /* NOVO: Padrão de Linhas Diagonais Sutis */
+  background-image:
+    linear-gradient(135deg, rgba(55, 117, 177, 0.03) 25%, transparent 25%), /* Azul (3% opacidade) */
+    linear-gradient(225deg, rgba(52, 186, 168, 0.03) 25%, transparent 25%), /* Verde-Água (3% opacidade) */
+    linear-gradient(45deg, rgba(55, 117, 177, 0.03) 25%, transparent 25%),
+    linear-gradient(315deg, rgba(52, 186, 168, 0.03) 25%, transparent 25%);
+  background-size: 40px 40px; /* Tamanho da repetição do padrão */
+  background-position: 0 0, 20px 0, 20px 20px, 0 20px; /* Posicionamento para criar o efeito de cruzamento */
+  background-attachment: fixed;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Garante que o rodapé fique na parte inferior */
+}
+
+/* Estilos para links padrão */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Estilos para containers de conteúdo */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Estilos para títulos principais */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-league-spartan); /* League Spartan para títulos */
+  color: var(--proceder-azul);
+}
+
+/* src/styles/global.css (adicionar ao final) */
+.main-content {
+  flex-grow: 1; /* Garante que o conteúdo principal ocupe o espaço restante */
+  padding: 40px 0; /* Espaçamento superior e inferior para o conteúdo */
+}
+
+/* src/styles/global.css */
+
+/* ... (seus estilos existentes) ... */
+
+/* Estilos para containers de conteúdo */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* NOVO: Estilos para o container principal das páginas (Home, About, Contact) */
+.page-container {
+  max-width: 1200px; /* Mesma largura dos conteúdos do header */
+  margin: 20px auto; /* Centraliza e adiciona espaçamento acima/abaixo */
+  padding: 40px 20px; /* Espaçamento interno do conteúdo */
+  background-color: white; /* Fundo branco para o conteúdo */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar o bloco */
+  border-radius: 8px; /* Cantos arredondados */
+}
+
+/* ... (restante dos seus estilos globais) ... */

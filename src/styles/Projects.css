@@ -1,0 +1,873 @@
+/* src/styles/Projects.css */
+
+/* Importar as variáveis globais de cores e fontes, se não estiverem já no global.css */
+/* @import './global.css'; */ /* Certifique-se de que as variáveis :root estão acessíveis */
+
+/* Variáveis de Cores (Exemplo, se não estiverem em um global.css) */
+:root {
+  --proceder-verde-agua: #34BAA8;
+  --proceder-azul: #3775B1;
+  --proceder-amarelo: #FECC5E;
+  --font-league-spartan: 'League Spartan', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+  --text-color-dark: #333;
+  --text-color-medium: #555;
+  --text-color-light: #666;
+  --background-light: #f9f9f9;
+  --background-medium: #f0f0f0;
+  /* NOVAS VARIÁVEIS ADICIONADAS */
+  --proceder-cinza-claro: #f8f8f8; /* Fundo suave para a seção de destaque */
+  --proceder-cinza-escuro: #333; /* Usado para texto em badges, etc. */
+}
+
+.projects-page {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.projects-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.projects-title {
+  font-family: var(--font-league-spartan);
+  font-size: 3.5em;
+  font-weight: 700;
+  color: var(--proceder-azul);
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.projects-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 5px;
+  background-color: var(--proceder-verde-agua);
+  border-radius: 2px;
+}
+
+.projects-intro-text {
+  font-family: var(--font-poppins);
+  font-size: 1.2em;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.section-subtitle {
+  font-family: var(--font-league-spartan);
+  font-size: 2.5em;
+  color: var(--proceder-azul);
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.section-subtitle::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--proceder-amarelo);
+  border-radius: 2px;
+}
+
+/* Estilo da Galeria de Projetos (Layout Cascata/Masonry) */
+.projects-gallery {
+  column-count: 3; /* 3 colunas em telas grandes */
+  column-gap: 25px; /* Espaçamento entre as colunas */
+  margin-top: 40px;
+}
+
+.project-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 25px; /* Espaçamento entre os cards na mesma coluna */
+  break-inside: avoid-column; /* Evita que o card seja quebrado entre colunas */
+  overflow: hidden; /* Garante que a imagem arredondada não vaze */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.project-card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.project-card-content {
+  padding: 20px;
+}
+
+.project-card-title {
+  font-family: var(--font-league-spartan);
+  font-size: 1.5em;
+  color: var(--proceder-azul);
+  margin-top: 0;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.project-card-description {
+  font-family: var(--font-poppins);
+  font-size: 0.95em;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Estilos para a seção dos Mascotes */
+.mascots-section {
+  margin-top: 80px;
+  padding: 50px 0;
+  background-color: #f8fcfb; /* Fundo claro para destacar */
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  text-align: center;
+
+  /* Animação de aparição */
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.mascots-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mascots-intro-text {
+  font-family: var(--font-poppins);
+  font-size: 1.1em;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  line-height: 1.7;
+}
+
+.mascots-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.mascot-item {
+  flex: 0 0 280px; /* Largura fixa para cada mascote */
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.mascot-item:hover {
+  transform: translateY(-8px);
+}
+
+.mascot-image {
+  width: 150px; /* Tamanho da imagem do mascote individual */
+  height: 150px;
+  object-fit: contain; /* Garante que a imagem se ajuste sem cortar */
+  border-radius: 50%; /* Se as imagens forem circulares */
+  margin-bottom: 20px;
+  border: 4px solid var(--proceder-amarelo); /* Borda amarela */
+}
+
+.mascot-name {
+  font-family: var(--font-league-spartan);
+  font-size: 1.8em;
+  color: var(--proceder-azul);
+  margin-bottom: 10px;
+}
+
+.mascot-description {
+  font-family: var(--font-poppins);
+  font-size: 0.95em;
+  color: #666;
+  line-height: 1.6;
+}
+
+.mascots-group-image {
+  max-width: 90%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+}
+
+/* ============================================
+   SEÇÃO DE DESTAQUE: PROJETO SOCIAL (ESTILOS ATUALIZADOS)
+   ============================================ */
+
+.social-project-highlight {
+  margin-top: 100px;
+  margin-bottom: 80px;
+  margin-left: auto; /* Adicionado para centralizar */
+  margin-right: auto; /* Adicionado para centralizar */
+  max-width: 1200px; /* Adicionado para limitar a largura */
+  padding: 80px 5%; /* Atualizado para mais respiro e responsividade */
+  background: linear-gradient(135deg, #e8f7f5 0%, #f0f9ff 100%); /* Mantido do seu código */
+  border-radius: 20px; /* Mantido do seu código */
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1); /* Mantido do seu código */
+  position: relative;
+  overflow: hidden;
+  text-align: center; /* Adicionado para centralizar o conteúdo */
+
+  /* Animação de entrada (mantido do seu código) */
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.social-project-highlight::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(95, 210, 195, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.social-project-highlight.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.social-project-header {
+  text-align: center;
+  margin-bottom: 50px; /* Atualizado */
+  max-width: 800px; /* Adicionado */
+  margin-left: auto; /* Adicionado */
+  margin-right: auto; /* Adicionado */
+  position: relative;
+  z-index: 1;
+}
+
+.social-project-badge {
+  display: inline-block;
+  background-color: var(--proceder-amarelo); /* Atualizado para cor de destaque */
+  color: var(--proceder-cinza-escuro); /* Atualizado para cor de texto */
+  padding: 8px 20px; /* Atualizado */
+  border-radius: 25px; /* Atualizado */
+  font-family: var(--font-league-spartan);
+  font-size: 0.9em;
+  font-weight: 700; /* Atualizado */
+  text-transform: uppercase;
+  letter-spacing: 1px; /* Atualizado */
+  margin-bottom: 20px; /* Atualizado */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Atualizado */
+}
+
+.social-project-title {
+  font-family: var(--font-league-spartan);
+  font-size: 3.2em; /* Mantido do seu código */
+  font-weight: 700;
+  color: var(--proceder-azul);
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+
+.social-project-description {
+  font-family: var(--font-poppins);
+  font-size: 1.15em;
+  color: var(--text-color-medium); /* Atualizado para variável existente */
+  line-height: 1.8; /* Atualizado para melhor legibilidade */
+  max-width: 900px;
+  margin: 0 auto 30px auto; /* Adicionado margin-bottom */
+}
+
+.social-project-description strong {
+  color: var(--proceder-verde-agua); /* Atualizado para cor de destaque */
+  font-weight: 700; /* Atualizado */
+}
+
+/* Galeria de Fotos do Projeto Social (para fotos individuais) */
+.social-project-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px; /* Atualizado */
+  margin-top: 50px; /* Espaçamento superior para separar das coleções */
+  position: relative;
+  z-index: 1;
+}
+
+.social-project-photo-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.social-project-photo-item:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.photo-wrapper {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.photo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.social-project-photo-item:hover .photo-wrapper img {
+  transform: scale(1.1);
+}
+
+/* CORREÇÃO APLICADA AQUI para o texto não escapar */
+.photo-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85); /* Fundo sólido escuro para garantir legibilidade */
+  padding: 15px; /* Padding uniforme */
+  box-sizing: border-box; /* Garante que o padding seja incluído na largura/altura */
+  text-align: center;
+
+  transform: translateY(100%);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+
+  /* Garante que o overlay não cresça mais que a imagem e adicione scroll se necessário */
+  max-height: 100%; /* Limita a altura máxima do overlay à altura da imagem */
+  overflow-y: auto; /* Adiciona barra de rolagem vertical se o conteúdo exceder a altura */
+}
+
+.social-project-photo-item:hover .photo-overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.photo-overlay-caption {
+  font-family: var(--font-poppins);
+  font-size: 0.95em;
+  color: white;
+  margin: 0; /* Remove margens padrão */
+  line-height: 1.5;
+  font-weight: 500;
+  word-wrap: break-word; /* Permite que palavras longas quebrem */
+  overflow-wrap: break-word; /* Alternativa moderna para word-wrap */
+}
+
+.social-project-footer {
+  text-align: center;
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 1;
+}
+
+.social-project-impact {
+  font-family: var(--font-poppins);
+  font-size: 1.2em; /* Atualizado */
+  color: var(--proceder-azul); /* Atualizado */
+  line-height: 1.6;
+  font-weight: 600; /* Adicionado */
+}
+
+.social-project-impact strong {
+  color: var(--proceder-verde-agua);
+  font-weight: 700;
+  font-size: 1.1em; /* Adicionado */
+}
+
+/* ============================================
+   COLEÇÕES DE FOTOS AGRUPADAS (NOVOS ESTILOS)
+   ============================================ */
+
+.photo-collections-container {
+  display: grid;
+  /* AUMENTADO: Largura mínima das colunas para deixar os contêineres maiores */
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+  gap: 50px;
+  margin: 60px 0 80px 0; /* Adicionado margin-bottom para separar da galeria individual */
+  position: relative;
+  z-index: 1;
+}
+
+.photo-collection {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.photo-collection:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.collection-title {
+  font-family: var(--font-league-spartan);
+  font-size: 2em;
+  color: var(--proceder-azul);
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.collection-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--proceder-amarelo);
+  border-radius: 2px;
+}
+
+.collection-main-photo {
+  width: 100%;
+  /* AUMENTADO AINDA MAIS: Altura da imagem principal para mostrar mais da foto */
+  height: 500px; 
+  overflow: hidden;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.collection-main-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+  transition: transform 0.5s ease;
+}
+
+.collection-main-photo:hover img {
+  transform: scale(1.05);
+}
+
+.main-photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+  color: white;
+  padding: 15px;
+  font-family: var(--font-poppins);
+  font-size: 0.9em;
+  line-height: 1.4;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.collection-main-photo:hover .main-photo-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.collection-thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  max-width: 100%; /* Garante que as miniaturas não ultrapassem o contêiner */
+}
+
+.thumbnail {
+  width: 70px; /* Tamanho fixo para miniaturas */
+  height: 70px;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.thumbnail:hover {
+  transform: translateY(-3px);
+}
+
+.thumbnail.active {
+  border-color: var(--proceder-verde-agua);
+  box-shadow: 0 0 0 3px rgba(52, 186, 168, 0.3); /* Anel de destaque */
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* ============================================
+   MEDIA QUERIES PARA RESPONSIVIDADE
+   ============================================ */
+
+@media (max-width: 992px) {
+  .projects-title {
+    font-size: 3em;
+  }
+  .projects-intro-text {
+    font-size: 1.1em;
+  }
+  .projects-gallery {
+    column-count: 2; /* 2 colunas em telas médias */
+    column-gap: 20px;
+  }
+  .project-card-title {
+    font-size: 1.3em;
+  }
+  .section-subtitle {
+    font-size: 2em;
+  }
+  .mascots-grid {
+    gap: 30px;
+  }
+  .mascot-item {
+    flex: 0 0 250px;
+    padding: 20px;
+  }
+  .mascot-image {
+    width: 120px;
+    height: 120px;
+  }
+  .mascot-name {
+    font-size: 1.5em;
+  }
+
+  /* Projeto Social */
+  .social-project-highlight {
+    padding: 50px 30px;
+  }
+  .social-project-title {
+    font-size: 2.5em;
+  }
+  .social-project-description {
+    font-size: 1em;
+  }
+  .social-project-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  .photo-wrapper {
+    height: 250px;
+  }
+
+  /* Coleções de Fotos */
+  .photo-collections-container {
+    /* Ajustado para telas médias */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+  }
+  .collection-main-photo {
+    /* Ajustado para telas médias */
+    height: 400px; /* Aumentado para telas médias */
+  }
+  .collection-title {
+    font-size: 1.8em;
+  }
+  .thumbnail {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-page {
+    padding: 40px 15px;
+  }
+  .projects-title {
+    font-size: 2.5em;
+  }
+  .projects-title::after {
+    width: 120px;
+  }
+  .projects-intro-text {
+    font-size: 1em;
+  }
+  .projects-gallery {
+    column-count: 1; /* 1 coluna em telas pequenas */
+    column-gap: 0; /* Não precisa de gap entre colunas */
+  }
+  .project-card {
+    margin-bottom: 20px; /* Espaçamento entre cards empilhados */
+  }
+  .section-subtitle {
+    font-size: 1.8em;
+  }
+  .mascots-section {
+    padding: 40px 20px;
+  }
+  .mascots-intro-text {
+    font-size: 1em;
+  }
+  .mascots-grid {
+    flex-direction: column; /* Empilha os mascotes */
+    align-items: center;
+    gap: 25px;
+  }
+  .mascot-item {
+    flex: 0 0 auto; /* Remove largura fixa para se ajustar */
+    max-width: 300px; /* Limita a largura máxima */
+    width: 100%;
+  }
+  .mascots-group-image {
+    max-width: 100%;
+  }
+
+  /* Projeto Social */
+  .social-project-highlight {
+    padding: 40px 20px;
+    margin-top: 80px;
+    margin-left: auto; /* Adicionado */
+    margin-right: auto; /* Adicionado */
+  }
+  .social-project-title {
+    font-size: 2em;
+  }
+  .social-project-description {
+    font-size: 1em; /* Atualizado */
+  }
+  .social-project-gallery {
+    grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+  }
+  .photo-wrapper {
+    height: 220px;
+  }
+  .social-project-badge {
+    font-size: 0.8em;
+    padding: 6px 20px;
+  }
+  .social-project-impact {
+    font-size: 1em;
+  }
+
+  /* Coleções de Fotos */
+  .photo-collections-container {
+    grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+    gap: 40px;
+  }
+  .photo-collection {
+    padding: 20px;
+  }
+  .collection-main-photo {
+    /* Ajustado para telas pequenas */
+    height: 350px; /* Aumentado para telas pequenas */
+  }
+  .collection-title {
+    font-size: 1.6em;
+  }
+  .thumbnail {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-title {
+    font-size: 2em;
+  }
+  .projects-title::after {
+    width: 90px;
+  }
+  .section-subtitle {
+    font-size: 1.5em;
+  }
+  .project-card-title {
+    font-size: 1.2em;
+  }
+  .project-card-description {
+    font-size: 0.9em;
+  }
+  .mascot-name {
+    font-size: 1.3em;
+  }
+  .mascot-description {
+    font-size: 0.85em;
+  }
+
+  /* Projeto Social */
+  .social-project-title {
+    font-size: 1.8em;
+  }
+  .social-project-description {
+    font-size: 0.9em;
+  }
+  .photo-wrapper {
+    height: 180px;
+  }
+  .photo-overlay-caption {
+    font-size: 0.85em;
+  }
+
+  /* Coleções de Fotos */
+  .collection-main-photo {
+    /* Ajustado para telas muito pequenas */
+    height: 300px; /* Aumentado para telas muito pequenas */
+  }
+  .collection-title {
+    font-size: 1.4em;
+  }
+  .thumbnail {
+    width: 45px;
+    height: 45px;
+  }
+  .main-photo-caption {
+    font-size: 0.8em;
+    padding: 10px;
+  }
+}
+
+
+/* ============================================
+   MODO DE ALTO CONTRASTE
+   ============================================ */
+
+body.high-contrast-mode .projects-page {
+  background-color: black !important;
+  color: white !important;
+}
+
+body.high-contrast-mode .projects-title,
+body.high-contrast-mode .section-subtitle,
+body.high-contrast-mode .project-card-title,
+body.high-contrast-mode .mascot-name,
+body.high-contrast-mode .social-project-title,
+body.high-contrast-mode .collection-title {
+  color: white !important;
+}
+
+body.high-contrast-mode .projects-intro-text,
+body.high-contrast-mode .project-card-description,
+body.high-contrast-mode .mascots-intro-text,
+body.high-contrast-mode .mascot-description,
+body.high-contrast-mode .social-project-description,
+body.high-contrast-mode .social-project-impact {
+  color: white !important;
+}
+
+body.high-contrast-mode .projects-title::after,
+body.high-contrast-mode .section-subtitle::after,
+body.high-contrast-mode .collection-title::after {
+  background-color: var(--proceder-amarelo) !important; /* Ou outra cor de destaque */
+}
+
+body.high-contrast-mode .project-card,
+body.high-contrast-mode .mascot-item,
+body.high-contrast-mode .photo-collection {
+  background-color: #333 !important;
+  box-shadow: 0 0 10px var(--proceder-amarelo) !important;
+  border: 1px solid var(--proceder-amarelo) !important;
+}
+
+body.high-contrast-mode .mascot-image {
+  border-color: white !important;
+}
+
+/* Alto Contraste para a nova seção de Projeto Social */
+body.high-contrast-mode .social-project-highlight {
+  background: black !important;
+  box-shadow: 0 0 20px var(--proceder-amarelo) !important;
+  border: 1px solid var(--proceder-amarelo) !important;
+}
+
+body.high-contrast-mode .social-project-highlight::before {
+  background: radial-gradient(circle, rgba(255, 255, 0, 0.2) 0%, transparent 70%) !important; /* Amarelo para contraste */
+}
+
+body.high-contrast-mode .social-project-badge {
+  background: var(--proceder-amarelo) !important;
+  color: black !important;
+  box-shadow: 0 0 8px white !important;
+}
+
+body.high-contrast-mode .social-project-description strong {
+  color: var(--proceder-amarelo) !important;
+}
+
+body.high-contrast-mode .social-project-photo-item {
+  background-color: #333 !important;
+  box-shadow: 0 0 10px var(--proceder-amarelo) !important;
+  border: 1px solid var(--proceder-amarelo) !important;
+}
+
+body.high-contrast-mode .photo-overlay {
+  /* Fundo sólido amarelo para alto contraste */
+  background: rgba(255, 255, 0, 0.9) !important; 
+}
+
+body.high-contrast-mode .photo-overlay-caption {
+  color: black !important; /* Texto preto sobre fundo amarelo */
+}
+
+body.high-contrast-mode .social-project-footer {
+  border-top-color: var(--proceder-amarelo) !important;
+}
+
+body.high-contrast-mode .social-project-impact strong {
+  color: var(--proceder-amarelo) !important;
+}
+
+/* Alto Contraste para as Coleções de Fotos */
+body.high-contrast-mode .collection-main-photo {
+  box-shadow: 0 0 10px var(--proceder-amarelo) !important;
+}
+
+body.high-contrast-mode .main-photo-caption {
+  /* Fundo sólido amarelo para alto contraste */
+  background: rgba(255, 255, 0, 0.9) !important; 
+  color: black !important;
+}
+
+body.high-contrast-mode .thumbnail {
+  border-color: var(--proceder-amarelo) !important;
+  box-shadow: 0 0 8px white !important;
+}
+
+body.high-contrast-mode .thumbnail.active {
+  border-color: white !important;
+  box-shadow: 0 0 0 3px var(--proceder-amarelo) !important;
+}

@@ -1,0 +1,163 @@
+/* src/styles/Services.css */
+
+.services-title {
+  font-size: 2.8em;
+  color: var(--proceder-azul); /* Usando a cor azul da sua paleta */
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'League Spartan', sans-serif; /* Ou a fonte principal do seu projeto */
+}
+
+.services-intro-text {
+  font-size: 1.1em;
+  color: #555;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+  line-height: 1.6;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Layout responsivo com cards */
+  gap: 30px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 8px solid; /* Borda superior para diferenciar os níveis */
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Cores das bordas para cada nível */
+.service-card.level-1 { border-color: var(--proceder-verde-agua); }
+.service-card.level-2 { border-color: var(--proceder-azul); }
+.service-card.level-3 { border-color: var(--proceder-amarelo); }
+
+
+.card-title {
+  font-size: 1.8em;
+  color: var(--proceder-azul);
+  margin-bottom: 10px;
+  font-family: 'League Spartan', sans-serif;
+}
+
+.card-subtitle {
+  font-size: 0.95em;
+  color: #777;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.card-content {
+  flex-grow: 1; /* Permite que o conteúdo ocupe o espaço restante */
+  margin-bottom: 25px;
+}
+
+.service-item {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #eee;
+}
+
+.service-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.service-item h3 {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 8px;
+  font-family: 'Poppins', sans-serif; /* Ou a fonte secundária do seu projeto */
+}
+
+.service-item p {
+  font-size: 0.9em;
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: var(--proceder-azul);
+  display: block; /* Para que o preço fique em uma nova linha */
+}
+
+.price.included {
+  color: var(--proceder-verde-agua);
+}
+
+.price.variable {
+  color: var(--proceder-amarelo);
+}
+
+.contact-button {
+  background-color: var(--proceder-verde-agua);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  align-self: center; /* Centraliza o botão no card */
+  width: 80%; /* Ocupa 80% da largura do card */
+  max-width: 250px;
+  margin-top: 20px;
+}
+
+.contact-button:hover {
+  background-color: #2da885; /* Um tom um pouco mais escuro do verde-água */
+  transform: translateY(-2px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .services-title {
+    font-size: 2.2em;
+  }
+  .services-intro-text {
+    font-size: 1em;
+    margin-bottom: 30px;
+    padding: 0 15px;
+  }
+  .services-grid {
+    grid-template-columns: 1fr; /* Empilha os cards em telas menores */
+    padding: 15px;
+  }
+  .service-card {
+    padding: 25px;
+  }
+  .card-title {
+    font-size: 1.5em;
+  }
+  .card-subtitle {
+    font-size: 0.9em;
+  }
+  .service-item h3 {
+    font-size: 1.1em;
+  }
+  .contact-button {
+    width: 100%;
+    max-width: none;
+  }
+}

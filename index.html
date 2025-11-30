@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>meu-site-proceder</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- VLibras Plugin - INÍCIO -->
+    <!-- Estes divs devem estar no HTML inicial para o VLibras encontrá-los -->
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <!-- O script do VLibras deve ser carregado de forma tradicional -->
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      // A inicialização deve ocorrer após o script ter sido carregado
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    <!-- VLibras Plugin - FIM -->
+
+  </body>
+</html>

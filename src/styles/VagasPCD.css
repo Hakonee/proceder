@@ -1,0 +1,247 @@
+/* src/styles/VagasPCD.css */
+
+/* Importação das fontes da Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Poppins:wght@400;600&display=swap');
+
+/* Estilos globais básicos (se não estiverem em outro lugar) */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura/altura */
+  background-color: #3775B1; /* Fundo azul da marca para o body */
+  color: #333;
+}
+
+/* Container principal da página de vagas */
+.vagas-container {
+  padding: 60px 20px;
+  background-color: #FFFFFF; /* Fundo branco para o conteúdo centralizado */
+  text-align: center;
+  /* Removido 'width: 100%;' aqui. 'max-width' e 'margin: 0 auto' já garantem o comportamento desejado. */
+  max-width: 1200px; /* Limita a largura máxima do container */
+  margin: 0 auto; /* Centraliza o container na página */
+  border-radius: 12px; /* Bordas arredondadas para o container principal */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15); /* Sombra sutil */
+  box-sizing: border-box; /* Essencial para que o padding não cause overflow */
+}
+
+/* Título da página de vagas */
+.vagas-titulo {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: #3775B1; /* Azul da marca */
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.vagas-titulo::after { /* Underline decorativo */
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100px; /* Largura do underline */
+  height: 4px;
+  background-color: #34BAA8; /* Verde-água da marca */
+  border-radius: 2px;
+}
+
+/* Subtítulo da página de vagas */
+.vagas-subtitulo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 50px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Grid de vagas */
+.vagas-grid {
+  display: grid;
+  /* CORREÇÃO PRINCIPAL AQUI:
+     - Usamos 'minmax(280px, 1fr)' para que as colunas tenham no mínimo 280px e cresçam para preencher o espaço.
+     - 'auto-fit' tentará encaixar o máximo de colunas possível.
+     - Isso é mais previsível do que 'min(X, 100%)' em alguns cenários de grid complexos. */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px; /* Espaçamento entre os cards */
+  justify-items: center; /* Centraliza os cards dentro de suas células do grid */
+  text-align: left; /* Alinha o texto dentro dos cards à esquerda */
+}
+
+/* Card individual da vaga */
+.vaga-card {
+  background: #fdfdfd; /* Fundo quase branco para o card */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Sombra mais suave */
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%; /* O card tenta ocupar 100% da largura da sua célula no grid */
+  max-width: 380px; /* Limite de largura para o card, mesmo que a célula seja maior */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #eee; /* Borda sutil */
+  box-sizing: border-box; /* Essencial para que o padding não cause overflow no card */
+}
+
+.vaga-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+/* Título da vaga dentro do card */
+.vaga-titulo-card {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.8rem;
+  color: #3775B1; /* Azul da marca */
+  margin-top: 0;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+/* Empresa e Local */
+.vaga-empresa {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* Descrição da vaga */
+.vaga-descricao {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  flex-grow: 1; /* Permite que a descrição ocupe o espaço restante */
+}
+
+/* Seções dentro do card (Requisitos, Acessibilidade) */
+.vaga-secao {
+  margin-bottom: 20px;
+}
+
+.vaga-secao h3 {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.2rem;
+  color: #34BAA8; /* Verde-água da marca */
+  margin-bottom: 10px;
+}
+
+.vaga-secao ul {
+  list-style: none; /* Remove marcadores de lista padrão */
+  padding-left: 0;
+  margin: 0;
+}
+
+.vaga-secao ul li {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 5px;
+  position: relative;
+  padding-left: 20px; /* Espaço para o ícone customizado */
+}
+
+.vaga-secao ul li::before { /* Ícone customizado para lista */
+  content: '•'; /* Ou um ícone SVG/Font Awesome */
+  color: #FECC5E; /* Amarelo da marca */
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  position: absolute;
+  left: 0;
+}
+
+.vaga-secao p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Botão de Candidatar */
+.botao-candidatar {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #34BAA8; /* Verde-água da marca */
+  color: #FFFFFF;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 20px; /* Espaço acima do botão */
+  box-shadow: 0 4px 10px rgba(52, 186, 168, 0.3); /* Sombra com cor da marca */
+}
+
+.botao-candidatar:hover {
+  background-color: #2da896; /* Um tom mais escuro de verde-água */
+  transform: translateY(-2px);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 992px) {
+  .vagas-grid {
+    /* Reduz o mínimo para 250px, permitindo mais flexibilidade */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .vaga-card {
+    max-width: 350px; /* Ajusta o max-width do card para telas médias */
+  }
+}
+
+@media (max-width: 768px) {
+  .vagas-titulo {
+    font-size: 2.2rem;
+  }
+  .vagas-subtitulo {
+    font-size: 1rem;
+    margin-bottom: 40px;
+  }
+  .vagas-grid {
+    /* Reduz ainda mais o mínimo para 220px */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px; /* Reduz o espaçamento */
+  }
+  .vaga-card {
+    padding: 25px;
+    max-width: 100%; /* Permite que o card ocupe 100% da largura da sua célula */
+  }
+}
+
+@media (max-width: 480px) {
+  .vagas-container {
+    padding: 40px 15px;
+    border-radius: 0; /* Remove border-radius em telas muito pequenas */
+    box-shadow: none; /* Remove sombra em telas muito pequenas */
+  }
+  .vagas-titulo {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  .vagas-subtitulo {
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+  }
+  .vagas-grid {
+    grid-template-columns: 1fr; /* Força uma única coluna em celulares */
+    gap: 20px; /* Reduz o espaçamento para uma única coluna */
+  }
+  .vaga-card {
+    max-width: 100%; /* O card ocupa 100% da largura da única coluna */
+    margin: 0 auto; /* Centraliza o card se ele não ocupar 100% por algum motivo */
+  }
+}

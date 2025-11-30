@@ -1,0 +1,337 @@
+/* src/styles/Contact.css */
+
+/* Importar as variáveis globais de cores e fontes, se não estiverem já no global.css */
+/* @import './global.css'; */ /* Certifique-se de que as variáveis :root estão acessíveis */
+
+.contact-page {
+  padding: 60px 20px; /* Aumenta o padding vertical */
+  max-width: 1200px; /* Limita a largura da página de contato */
+  margin: 0 auto; /* Centraliza a página */
+  box-sizing: border-box;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.contact-title {
+  font-family: var(--font-league-spartan); /* Usando a fonte da marca */
+  font-size: 3.5em; /* Aumenta o tamanho do título */
+  font-weight: 700;
+  color: var(--proceder-azul);
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.contact-title::after { /* Underline decorativo */
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 120px; /* Largura do underline */
+  height: 5px;
+  background-color: var(--proceder-verde-agua); /* Verde-água da marca */
+  border-radius: 2px;
+}
+
+.contact-intro-text {
+  font-family: var(--font-poppins);
+  font-size: 1.2em;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.contact-content-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas menores */
+  gap: 40px; /* Espaçamento entre o formulário e a barra lateral */
+  justify-content: center; /* Centraliza os blocos quando há espaço */
+  align-items: flex-start; /* Alinha o topo dos blocos */
+}
+
+.contact-form-container {
+  flex: 2; /* O formulário ocupa mais espaço */
+  min-width: 300px; /* Largura mínima para o formulário */
+  max-width: 700px; /* Limita a largura máxima do formulário */
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px; /* Bordas mais arredondadas */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada */
+  box-sizing: border-box;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espaçamento entre os grupos de formulário */
+}
+
+.form-group {
+  margin-bottom: 0; /* Removido margin-bottom, usando gap no form */
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-poppins);
+  font-size: 1em; /* Aumenta um pouco o tamanho da label */
+  font-weight: 600; /* Mais negrito */
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.required-star {
+  color: var(--proceder-amarelo); /* Amarelo da marca para o asterisco de obrigatório */
+  margin-left: 4px;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 14px 18px; /* Aumenta o padding */
+  border: 1px solid #ccc; /* Borda mais suave */
+  border-radius: 8px; /* Bordas mais arredondadas */
+  font-family: var(--font-poppins);
+  font-size: 1em;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box; /* Garante que padding e border não causem overflow */
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #999;
+  opacity: 0.8;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--proceder-verde-agua);
+  box-shadow: 0 0 0 4px rgba(52, 186, 168, 0.25); /* Sombra mais visível no foco */
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 150px; /* Aumenta a altura mínima */
+}
+
+.submit-button {
+  background-color: var(--proceder-verde-agua);
+  color: white;
+  font-family: var(--font-poppins);
+  font-size: 1.15em; /* Aumenta o tamanho da fonte do botão */
+  font-weight: 700; /* Mais negrito */
+  padding: 15px 30px; /* Aumenta o padding do botão */
+  border: none;
+  border-radius: 8px; /* Bordas mais arredondadas */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  align-self: center; /* Centraliza o botão dentro do formulário */
+  max-width: 300px; /* Limita a largura do botão */
+  width: 100%; /* Ocupa 100% da largura disponível até o max-width */
+  box-shadow: 0 4px 15px rgba(52, 186, 168, 0.3); /* Sombra com cor da marca */
+}
+
+.submit-button:hover {
+  background-color: var(--proceder-azul); /* Azul no hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(55, 117, 177, 0.35); /* Sombra com cor azul no hover */
+}
+
+/* Estilos para a barra lateral de informações de contato */
+.contact-info-sidebar {
+  flex: 1; /* Ocupa o espaço restante */
+  min-width: 280px; /* Largura mínima para a barra lateral */
+  background-color: #f8fcfb; /* Fundo mais claro para a barra lateral */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o conteúdo da sidebar */
+  text-align: center;
+}
+
+.sidebar-title {
+  font-family: var(--font-league-spartan);
+  font-size: 2em;
+  color: var(--proceder-azul);
+  margin-bottom: 20px;
+}
+
+.sidebar-text {
+  font-family: var(--font-poppins);
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.contact-details-group {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.contact-detail-item {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza o item */
+  margin-bottom: 15px;
+  font-family: var(--font-poppins);
+  font-size: 1.1em;
+  color: var(--proceder-azul);
+  font-weight: 600;
+}
+
+.contact-icon {
+  font-size: 1.3em;
+  color: var(--proceder-verde-agua); /* Ícone com a cor verde-água */
+  margin-right: 10px;
+  width: 25px; /* Garante alinhamento consistente */
+  text-align: center;
+}
+
+.contact-link {
+  color: var(--proceder-azul);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: var(--proceder-verde-agua);
+  text-decoration: underline;
+}
+
+.contact-text {
+  color: var(--proceder-azul);
+}
+
+.social-media-links {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.social-media-title {
+  font-family: var(--font-league-spartan);
+  font-size: 1.5em;
+  color: var(--proceder-azul);
+  margin-bottom: 15px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: var(--proceder-azul);
+  color: white;
+  font-size: 1.5em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.social-icon-link:hover {
+  background-color: var(--proceder-verde-agua);
+  transform: translateY(-3px);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 992px) {
+  .contact-title {
+    font-size: 3em;
+  }
+  .contact-intro-text {
+    font-size: 1.1em;
+  }
+  .contact-content-wrapper {
+    flex-direction: column; /* Empilha o formulário e a sidebar */
+    align-items: center; /* Centraliza os blocos empilhados */
+  }
+  .contact-form-container,
+  .contact-info-sidebar {
+    max-width: 600px; /* Limita a largura em telas médias */
+    width: 100%; /* Ocupa a largura total disponível */
+  }
+  .contact-form-container {
+    padding: 30px;
+  }
+  .contact-info-sidebar {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 40px 15px;
+  }
+  .contact-title {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+  }
+  .contact-title::after {
+    width: 90px;
+    height: 4px;
+  }
+  .contact-intro-text {
+    font-size: 1em;
+    margin-bottom: 40px;
+  }
+  .contact-form-container {
+    padding: 25px;
+  }
+  .form-input,
+  .form-textarea {
+    padding: 12px 15px;
+  }
+  .submit-button {
+    font-size: 1.05em;
+    padding: 12px 25px;
+  }
+  .sidebar-title {
+    font-size: 1.8em;
+  }
+  .contact-detail-item {
+    font-size: 1em;
+  }
+  .social-icon-link {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3em;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-title {
+    font-size: 2em;
+  }
+  .contact-intro-text {
+    font-size: 0.95em;
+  }
+  .contact-form-container,
+  .contact-info-sidebar {
+    border-radius: 0; /* Remove bordas arredondadas em telas muito pequenas */
+    box-shadow: none; /* Remove sombra */
+  }
+  .contact-form-container {
+    padding: 20px;
+  }
+  .contact-info-sidebar {
+    padding: 20px;
+  }
+  .submit-button {
+    max-width: 100%; /* Botão ocupa toda a largura em mobile */
+  }
+}

@@ -1,0 +1,197 @@
+/* src/styles/Produtos.css */
+
+/* Importação das fontes da Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Poppins:wght@400;600&display=swap');
+
+/* Estilos globais básicos (se não estiverem em outro lugar) */
+body {
+  font-family: 'Poppins', sans-serif; /* Fonte padrão para o corpo */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #3775B1; /* <-- ALTERADO AQUI: Fundo azul da marca para o body */
+  color: #333;
+}
+
+/* Container principal da página de produtos */
+.produtos-container {
+  padding: 60px 20px;
+  background-color: #FFFFFF; /* Fundo branco para o conteúdo centralizado */
+  text-align: center;
+  max-width: 1200px; /* Limita a largura máxima do conteúdo */
+  margin: 0 auto; /* Centraliza o container na página */
+  /* Adicionei um border-radius para suavizar as bordas do container branco,
+     similar ao que se vê em alguns elementos das imagens */
+  border-radius: 12px; /* Bordas arredondadas para o container principal */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15); /* Sombra sutil para destacá-lo do fundo */
+}
+
+/* Título da página de produtos */
+.produtos-titulo {
+  font-family: 'League Spartan', sans-serif; /* Fonte League Spartan para títulos */
+  font-size: 2.8rem; /* Tamanho maior para o título */
+  margin-bottom: 50px; /* Mais espaço abaixo do título */
+  color: #3775B1; /* Azul da marca */
+  text-transform: uppercase; /* Deixa o título em maiúsculas */
+  letter-spacing: 1.5px; /* Espaçamento entre letras */
+  position: relative;
+  padding-bottom: 15px; /* Espaço para o underline */
+}
+
+.produtos-titulo::after { /* Underline decorativo */
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px; /* Largura do underline */
+  height: 4px;
+  background-color: #34BAA8; /* Verde-água da marca */
+  border-radius: 2px;
+}
+
+/* Grid de produtos */
+.produtos-grid {
+  display: grid; /* Usando CSS Grid para maior controle */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 3 colunas em telas maiores, ajusta para menos em telas menores */
+  gap: 30px; /* Espaçamento maior entre os cards */
+  justify-items: center; /* Centraliza os itens no grid */
+}
+
+/* Card individual do produto */
+.produto-card {
+  background: white;
+  border-radius: 12px; /* Bordas mais arredondadas */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08); /* Sombra mais pronunciada e suave */
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição mais suave */
+  width: 100%; /* Ocupa a largura total da coluna no grid */
+  max-width: 320px; /* Limite de largura para o card */
+  display: flex; /* Para organizar o conteúdo interno */
+  flex-direction: column;
+  justify-content: space-between; /* Empurra o botão para baixo */
+}
+
+.produto-card:hover {
+  transform: translateY(-8px); /* Efeito de "levantar" mais acentuado */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Sombra mais forte no hover */
+}
+
+/* Wrapper para a imagem do produto */
+.produto-imagem-wrapper {
+  width: 100%;
+  height: 180px; /* Altura fixa para as imagens */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #f0f2f5; /* Fundo sutil para a área da imagem */
+  border-radius: 8px;
+  overflow: hidden; /* Garante que a imagem não vaze */
+}
+
+.produto-imagem {
+  max-width: 90%; /* Ajusta a imagem para caber no wrapper */
+  max-height: 90%;
+  object-fit: contain; /* Garante que a imagem inteira seja visível */
+  border-radius: 4px;
+}
+
+/* Nome do produto */
+.produto-nome {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.6rem; /* Tamanho maior para o nome do produto */
+  color: #3775B1; /* Azul da marca */
+  margin-top: 15px;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+/* Descrição do produto */
+.produto-descricao {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem; /* Tamanho da fonte ligeiramente maior */
+  color: #555;
+  margin: 10px 0 25px 0; /* Mais espaço */
+  line-height: 1.6; /* Melhor legibilidade */
+  flex-grow: 1; /* Permite que a descrição ocupe o espaço restante */
+}
+
+/* Estilo para o botão "Em Breve" */
+.botao-em-breve {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #cccccc;
+  color: #666666;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  cursor: not-allowed;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+
+.botao-em-breve:hover {
+  background-color: #bbbbbb;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  .produtos-titulo {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+  }
+
+  .produtos-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+  }
+
+  .produto-card {
+    padding: 20px;
+  }
+
+  .produto-nome {
+    font-size: 1.4rem;
+  }
+
+  .produto-descricao {
+    font-size: 0.9rem;
+  }
+
+  .botao-em-breve {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .produtos-container {
+    padding: 40px 15px;
+    border-radius: 0; /* Remove border-radius em telas muito pequenas para ocupar 100% da largura */
+    box-shadow: none; /* Remove sombra em telas muito pequenas */
+  }
+
+  .produtos-titulo {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .produtos-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .produto-card {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .produto-imagem-wrapper {
+    height: 150px;
+  }
+}

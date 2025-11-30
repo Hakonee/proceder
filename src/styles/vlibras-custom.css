@@ -1,0 +1,20 @@
+/* src/styles/vlibras-custom.css */
+
+/* Ajustes de posicionamento */
+[vw-access-button] {
+  position: fixed !important;
+  right: 20px !important; /* Distância da lateral direita */
+  bottom: 5px !important; /* Ajustado para 5px para ficar bem próximo do rodapé */
+  z-index: 99999 !important;
+}
+
+/* Personalização da cor do botão */
+.vw-access-button {
+  background-color: #3775B1 !important; /* Cor azul da sua paleta */
+  border-color: #3775B1 !important; /* Borda com a mesma cor */
+}
+
+/* Ajuste da cor do ícone dentro do botão (se necessário, geralmente é branco) */
+.vw-access-button svg path {
+  fill: white !important; /* Mantém o ícone branco para contraste */
+}

@@ -1,0 +1,18 @@
+/* src/styles/Footer.css */
+.footer {
+  background-color: var(--proceder-azul);
+  color: white;
+  padding: 25px 0;
+  text-align: center;
+  margin-top: auto; /* Empurra o rodapé para baixo */
+}
+
+.footer-text {
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+
+.footer-subtext {
+  font-size: 0.75em;
+  opacity: 0.8;
+}

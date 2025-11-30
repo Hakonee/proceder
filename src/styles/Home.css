@@ -1,0 +1,851 @@
+/* src/styles/Home.css */
+
+/* Importar as variáveis globais de cores e fontes, se não estiverem já no global.css */
+/* @import './global.css'; */ /* Certifique-se de que as variáveis :root estão acessíveis */
+
+/* Variáveis de Cores (baseadas no PDF fornecido) */
+:root {
+  --proceder-verde-agua: #34BAA8; /* Verde-Água (#34BAA8) */
+  --proceder-azul: #3775B1;     /* Azul (#3775B1) */
+  --proceder-amarelo: #FECC5E;   /* Amarelo (#FECC5E) */
+  --text-color-dark: #333;
+  --text-color-medium: #555;
+  --text-color-light: #666; /* Ajustado para consistência */
+  --background-light: #f9f9f9;
+  --background-medium: #f0f0f0; /* Adicionado para fundos de seção */
+  --background-dark: #2c3e50; /* Um tom escuro para contraste */
+  --font-league-spartan: 'League Spartan', sans-serif; /* Adicionado para consistência */
+  --font-poppins: 'Poppins', sans-serif; /* Adicionado para consistência */
+}
+
+/* Estilos Globais e Reset Básico (se não estiverem em um arquivo global) */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-poppins); /* Fonte padrão para o corpo do texto */
+  color: var(--text-color-medium);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container principal da página Home */
+.home-page-container {
+  overflow-x: hidden; /* Evita scroll horizontal devido a animações */
+}
+
+/* Estilos para Títulos de Seção */
+.section-title {
+  font-family: var(--font-league-spartan);
+  font-size: 3em; /* Aumentado para maior impacto */
+  color: var(--proceder-azul);
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 700;
+  position: relative; /* Para o pseudo-elemento */
+  padding-bottom: 15px; /* Espaço para o sublinhado */
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100px; /* Largura do sublinhado */
+  height: 4px;
+  background-color: var(--proceder-verde-agua);
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  font-family: var(--font-poppins);
+  font-size: 1.2em;
+  color: var(--text-color-medium);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+  line-height: 1.7;
+}
+
+/* Estilos para Botões */
+.btn {
+  display: inline-block;
+  padding: 15px 35px; /* Mais padding */
+  border-radius: 30px; /* Mais arredondado */
+  font-size: 1.1em;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  font-family: var(--font-league-spartan); /* Usando League Spartan para botões */
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  background-color: var(--proceder-verde-agua);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #2da885; /* Tom mais escuro do verde-água */
+  transform: translateY(-3px); /* Efeito de "levantar" */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--proceder-azul);
+  border: 2px solid var(--proceder-azul);
+  margin-left: 20px;
+}
+
+.btn-secondary:hover {
+  background-color: var(--proceder-azul);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn-tertiary {
+  background-color: var(--proceder-azul);
+  color: white;
+  padding: 12px 25px; /* Ajustado para ser um pouco menor */
+  font-size: 1em;
+  font-weight: 500;
+  border-radius: 25px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-tertiary:hover {
+  background-color: #2a6094; /* Tom mais escuro do azul */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Seção Hero */
+.hero-section {
+  background: url('/images/office-team.png') no-repeat center center/cover; /* Imagem da página 8 do PDF */
+  min-height: 80vh; /* Altura mínima para o banner */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white; /* Cor padrão para o texto da seção hero */
+  text-align: center;
+  position: relative;
+  padding: 100px 20px; /* Mais padding */
+  overflow: hidden;
+}
+
+.hero-section::before { /* Overlay escuro para melhorar a legibilidade do texto */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Escurece mais a imagem de fundo */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px; /* Aumentado */
+}
+
+.hero-tagline {
+  font-family: var(--font-poppins);
+  font-size: 1.6em; /* Maior */
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: var(--proceder-amarelo);
+}
+
+.hero-title {
+  font-family: var(--font-league-spartan);
+  font-size: 4.5em; /* Maior impacto */
+  margin-bottom: 30px;
+  line-height: 1.1;
+  font-weight: 800;
+  color: var(--proceder-verde-agua);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /* Sombra para destaque */
+}
+
+.hero-description {
+  font-family: var(--font-poppins);
+  font-size: 1.4em; /* Maior */
+  margin-bottom: 50px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 25px; /* Mais espaço entre botões */
+}
+
+/* Ajuste para o botão secundário na seção Hero */
+.hero-buttons .btn-secondary {
+  color: white; /* Texto branco para melhor contraste */
+  border-color: white; /* Borda branca para melhor contraste */
+}
+
+.hero-buttons .btn-secondary:hover {
+  background-color: var(--proceder-azul); /* Mantém o fundo azul no hover */
+  color: white; /* Mantém o texto branco no hover */
+  border-color: var(--proceder-azul); /* Borda azul no hover */
+}
+
+/* Animação de pulso para o botão primário na hero */
+.hero-buttons .btn-primary {
+  animation: pulse 2s infinite ease-in-out 1s; /* Animação de pulso */
+}
+
+
+/* Seção Sobre/Missão */
+.about-home-section {
+  padding: 100px 20px; /* Mais padding */
+  background-color: var(--background-light);
+  text-align: center;
+}
+
+.about-home-content {
+  max-width: 1100px; /* Aumentado */
+  margin: 0 auto;
+}
+
+.about-home-text {
+  font-family: var(--font-poppins);
+  font-size: 1.15em;
+  line-height: 1.8;
+  margin-bottom: 60px;
+  color: var(--text-color-dark);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.brand-meaning-block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 50px; /* Mais espaço */
+  margin-top: 50px;
+  background-color: white;
+  padding: 50px; /* Mais padding */
+  border-radius: 20px; /* Mais arredondado */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra mais proeminente */
+  text-align: left;
+}
+
+.brand-meaning-img {
+  flex: 1;
+  min-width: 300px;
+  max-width: 450px;
+  height: auto;
+  border-radius: 15px; /* Mais arredondado */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.brand-meaning-img:hover {
+  transform: scale(1.03);
+}
+
+.brand-meaning-text {
+  flex: 1.5;
+  min-width: 300px;
+}
+
+.brand-meaning-text h3 {
+  font-family: var(--font-league-spartan);
+  font-size: 2.2em; /* Maior */
+  color: var(--proceder-azul);
+  margin-bottom: 20px;
+}
+
+.brand-meaning-text p {
+  font-family: var(--font-poppins);
+  font-size: 1.05em;
+  line-height: 1.7;
+  margin-bottom: 35px;
+  color: var(--text-color-medium);
+}
+
+
+/* Seção de Serviços em Destaque */
+.featured-services-section {
+  padding: 100px 20px;
+  background-color: var(--background-medium); /* Fundo diferente para contraste */
+}
+
+.services-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Ajustado */
+  gap: 40px; /* Mais espaço */
+  max-width: 1200px;
+  margin: 0 auto 60px auto;
+}
+
+.service-card-home {
+  background-color: white;
+  border-radius: 15px; /* Mais arredondado */
+  padding: 35px; /* Mais padding */
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Sombra mais proeminente */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.service-card-home:hover {
+  transform: translateY(-10px); /* Efeito de "levantar" mais acentuado */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.service-card-home h3 {
+  font-family: var(--font-league-spartan);
+  font-size: 1.8em; /* Maior */
+  color: var(--proceder-azul);
+  margin-bottom: 18px;
+}
+
+.service-card-home p {
+  font-family: var(--font-poppins);
+  font-size: 1em;
+  line-height: 1.7;
+  color: var(--text-color-medium);
+  flex-grow: 1;
+  margin-bottom: 30px;
+}
+
+.card-link {
+  display: inline-block;
+  color: var(--proceder-verde-agua);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05em;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.card-link:hover {
+  color: var(--proceder-azul);
+  text-decoration: underline;
+  transform: translateX(5px); /* Pequeno movimento para a direita */
+}
+
+.icon-placeholder {
+  width: 70px; /* Maior */
+  height: 70px; /* Maior */
+  border-radius: 50%;
+  margin: 0 auto 30px auto; /* Mais espaço */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2em; /* Ícone maior */
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.level-1-icon { background-color: var(--proceder-verde-agua); }
+.level-2-icon { background-color: var(--proceder-azul); }
+.level-3-icon { background-color: var(--proceder-amarelo); }
+
+
+.all-services-cta {
+  text-align: center;
+  margin-top: 70px;
+}
+
+
+/* Seção Vagas PCD */
+.vagas-pcd-home-section {
+  background-color: var(--proceder-azul);
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.vagas-pcd-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.vagas-pcd-home-section .section-title {
+  color: white;
+  margin-bottom: 25px;
+}
+
+.vagas-pcd-home-section .section-title::after {
+  background-color: var(--proceder-amarelo); /* Sublinhado amarelo */
+}
+
+.vagas-pcd-description {
+  font-family: var(--font-poppins);
+  font-size: 1.3em; /* Maior */
+  line-height: 1.7;
+  margin-bottom: 45px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vagas-pcd-home-section .btn-primary {
+  background-color: var(--proceder-amarelo);
+  color: var(--text-color-dark);
+}
+
+.vagas-pcd-home-section .btn-primary:hover {
+  background-color: #fec23e; /* Tom mais escuro do amarelo */
+}
+
+
+/* Seção de Contato Final */
+.contact-home-section {
+  padding: 100px 20px;
+  background-color: var(--background-light);
+  text-align: center;
+}
+
+.contact-home-section .section-title {
+  margin-bottom: 25px;
+}
+
+.contact-home-description {
+  font-family: var(--font-poppins);
+  font-size: 1.3em; /* Maior */
+  line-height: 1.7;
+  margin-bottom: 45px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* ========================================================================== */
+/* Animações CSS (Keyframes) */
+/* ========================================================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px); /* Mais movimento */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8); /* Começa menor */
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    transform: scale(1.03); /* Pulso mais sutil */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+
+/* ========================================================================== */
+/* Responsividade */
+/* ========================================================================== */
+@media (min-width: 992px) {
+  .brand-meaning-block:nth-child(even) { /* Alterna a ordem da imagem e texto */
+    flex-direction: row-reverse;
+  }
+  .brand-meaning-block:nth-child(even) .brand-meaning-img {
+    margin-left: 40px;
+    margin-right: 0;
+  }
+  .brand-meaning-block:nth-child(odd) .brand-meaning-img {
+    margin-right: 40px;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-section {
+    min-height: 70vh;
+    padding: 80px 20px;
+  }
+  .hero-tagline {
+    font-size: 1.4em;
+  }
+  .hero-title {
+    font-size: 3.5em;
+  }
+  .hero-description {
+    font-size: 1.2em;
+  }
+  .section-title {
+    font-size: 2.5em;
+  }
+  .section-subtitle {
+    font-size: 1.1em;
+  }
+  .brand-meaning-block {
+    flex-direction: column; /* Empilha em telas menores */
+    text-align: center;
+    padding: 40px;
+    gap: 30px;
+  }
+  .brand-meaning-img {
+    max-width: 60%; /* Ajustado */
+    margin: 0 auto; /* Centraliza */
+  }
+  .brand-meaning-text {
+    text-align: center;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .btn-secondary {
+    margin-left: 0;
+  }
+  .services-cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+  .service-card-home {
+    padding: 30px;
+  }
+  .icon-placeholder {
+    width: 60px;
+    height: 60px;
+    font-size: 2em;
+  }
+  .service-card-home h3 {
+    font-size: 1.6em;
+  }
+  .vagas-pcd-description,
+  .contact-home-description {
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 60vh;
+    padding: 60px 15px;
+  }
+  .hero-tagline {
+    font-size: 1.2em;
+  }
+  .hero-title {
+    font-size: 2.8em;
+  }
+  .hero-description {
+    font-size: 1em;
+  }
+  .section-title {
+    font-size: 2em;
+    padding-bottom: 10px;
+  }
+  .section-title::after {
+    width: 80px;
+    height: 3px;
+  }
+  .about-home-section,
+  .featured-services-section,
+  .vagas-pcd-home-section,
+  .contact-home-section {
+    padding: 70px 15px;
+  }
+  .about-home-text,
+  .vagas-pcd-description,
+  .contact-home-description {
+    font-size: 1em;
+  }
+  .brand-meaning-block {
+    padding: 30px;
+  }
+  .brand-meaning-img {
+    max-width: 80%;
+  }
+  .brand-meaning-text h3 {
+    font-size: 1.8em;
+  }
+  .brand-meaning-text p {
+    font-size: 1em;
+  }
+  .services-cards-grid {
+    grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+    gap: 25px;
+  }
+  .btn {
+    padding: 12px 25px;
+    font-size: 1em;
+  }
+  .btn-tertiary {
+    padding: 10px 20px;
+    font-size: 0.95em;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    min-height: 50vh;
+    padding: 40px 10px;
+  }
+  .hero-tagline {
+    font-size: 1em;
+  }
+  .hero-title {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+  }
+  .hero-description {
+    font-size: 0.9em;
+    margin-bottom: 30px;
+  }
+  .section-title {
+    font-size: 1.6em;
+    padding-bottom: 8px;
+  }
+  .section-title::after {
+    width: 60px;
+    height: 2px;
+  }
+  .section-subtitle {
+    font-size: 0.9em;
+    margin-bottom: 30px;
+  }
+  .about-home-section,
+  .featured-services-section,
+  .vagas-pcd-home-section,
+  .contact-home-section {
+    padding: 50px 10px;
+  }
+  .about-home-text,
+  .vagas-pcd-description,
+  .contact-home-description {
+    font-size: 0.9em;
+  }
+  .brand-meaning-block {
+    padding: 25px;
+  }
+  .brand-meaning-img {
+    max-width: 90%;
+  }
+  .brand-meaning-text h3 {
+    font-size: 1.5em;
+  }
+  .brand-meaning-text p {
+    font-size: 0.9em;
+  }
+  .service-card-home {
+    padding: 25px;
+  }
+  .icon-placeholder {
+    width: 50px;
+    height: 50px;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+  .service-card-home h3 {
+    font-size: 1.4em;
+  }
+  .service-card-home p {
+    font-size: 0.9em;
+  }
+  .card-link {
+    font-size: 0.95em;
+  }
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+}
+
+
+/* ========================================================================== */
+/* Modo de Alto Contraste (Aplicado quando a classe 'high-contrast-mode' está no body) */
+/* ========================================================================== */
+body.high-contrast-mode {
+  background-color: black !important;
+  color: white !important;
+}
+
+body.high-contrast-mode a {
+  color: var(--proceder-amarelo) !important;
+  text-decoration: underline !important;
+}
+
+body.high-contrast-mode a:hover,
+body.high-contrast-mode a:focus {
+  color: black !important;
+  background-color: white !important;
+}
+
+/* Seções */
+body.high-contrast-mode .hero-section,
+body.high-contrast-mode .about-home-section,
+body.high-contrast-mode .featured-services-section,
+body.high-contrast-mode .vagas-pcd-home-section,
+body.high-contrast-mode .contact-home-section {
+  background-color: black !important;
+  color: white !important;
+}
+
+/* Títulos */
+body.high-contrast-mode .section-title,
+body.high-contrast-mode .hero-title,
+body.high-contrast-mode .brand-meaning-text h3,
+body.high-contrast-mode .service-card-home h3 {
+  color: var(--proceder-verde-agua) !important;
+}
+
+body.high-contrast-mode .section-title::after {
+  background-color: var(--proceder-amarelo) !important;
+}
+
+/* Subtítulos e descrições */
+body.high-contrast-mode .section-subtitle,
+body.high-contrast-mode .hero-description,
+body.high-contrast-mode .about-home-text,
+body.high-contrast-mode .brand-meaning-text p,
+body.high-contrast-mode .service-card-home p,
+body.high-contrast-mode .vagas-pcd-description,
+body.high-contrast-mode .contact-home-description {
+  color: white !important;
+}
+
+/* Botões */
+body.high-contrast-mode .btn-primary {
+  background-color: var(--proceder-amarelo) !important;
+  color: black !important;
+  border: 2px solid var(--proceder-amarelo) !important;
+}
+
+body.high-contrast-mode .btn-primary:hover {
+  background-color: white !important;
+  color: black !important;
+  border-color: white !important;
+}
+
+body.high-contrast-mode .btn-secondary {
+  background-color: black !important;
+  color: var(--proceder-amarelo) !important;
+  border: 2px solid var(--proceder-amarelo) !important;
+}
+
+body.high-contrast-mode .btn-secondary:hover {
+  background-color: var(--proceder-amarelo) !important;
+  color: black !important;
+  border-color: var(--proceder-amarelo) !important;
+}
+
+body.high-contrast-mode .btn-tertiary {
+  background-color: var(--proceder-verde-agua) !important;
+  color: black !important;
+  border: 2px solid var(--proceder-verde-agua) !important;
+}
+
+body.high-contrast-mode .btn-tertiary:hover {
+  background-color: white !important;
+  color: black !important;
+  border-color: white !important;
+}
+
+/* Cards de Serviço */
+body.high-contrast-mode .service-card-home {
+  background-color: #333 !important;
+  color: white !important;
+  box-shadow: 0 0 10px var(--proceder-amarelo) !important;
+  border: 1px solid var(--proceder-amarelo) !important;
+}
+
+body.high-contrast-mode .card-link {
+  color: var(--proceder-amarelo) !important;
+}
+
+body.high-contrast-mode .card-link:hover {
+  color: white !important;
+}
+
+/* Ícones de placeholder */
+body.high-contrast-mode .icon-placeholder {
+  background-color: var(--proceder-amarelo) !important;
+  color: black !important;
+}
+
+body.high-contrast-mode .level-1-icon { background-color: var(--proceder-amarelo) !important; }
+body.high-contrast-mode .level-2-icon { background-color: var(--proceder-verde-agua) !important; }
+body.high-contrast-mode .level-3-icon { background-color: white !important; color: black !important; }
+
+/* Hero Section - Overlay */
+body.high-contrast-mode .hero-section::before {
+  background-color: rgba(0, 0, 0, 0.85) !important; /* Overlay mais escuro */
+}
+
+/* Brand Meaning Block */
+body.high-contrast-mode .brand-meaning-block {
+  background-color: #333 !important;
+  box-shadow: 0 0 10px var(--proceder-amarelo) !important;
+  border: 1px solid var(--proceder-amarelo) !important;
+}
+
+body.high-contrast-mode .brand-meaning-img {
+  box-shadow: 0 0 8px var(--proceder-amarelo) !important;
+  border: 1px solid var(--proceder-amarelo) !important;
+}
+
+/* Vagas PCD Section */
+body.high-contrast-mode .vagas-pcd-home-section {
+  background-color: #1a1a1a !important; /* Um tom de preto ligeiramente diferente */
+}
+body.high-contrast-mode .vagas-pcd-home-section .section-title {
+  color: white !important;
+}
+body.high-contrast-mode .vagas-pcd-home-section .section-title::after {
+  background-color: var(--proceder-verde-agua) !important;
+}
+
+/* Contact Home Section */
+body.high-contrast-mode .contact-home-section {
+  background-color: #1a1a1a !important;
+}
+body.high-contrast-mode .contact-home-section .section-title {
+  color: white !important;
+}
+body.high-contrast-mode .contact-home-section .section-title::after {
+  background-color: var(--proceder-verde-agua) !important;
+}
