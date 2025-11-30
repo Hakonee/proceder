@@ -12,7 +12,7 @@ import Services from './pages/Services'; // Importe o novo componente Services
 
 function App() {
   return (
-    <Router>
+    <Router basename="/proceder">
       <Header />
       <main className="main-content">
         <Routes>
