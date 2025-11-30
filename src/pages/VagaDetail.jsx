@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, Link, useLocation } from 'react-router-dom';
 import '../styles/VagaDetail.css';
+import vagaDesc from '../assets/vaga-descricao-ficticia.txt';
 
 // Página fictícia e elaborada de detalhes da vaga
 export default function VagaDetail() {
   const { id } = useParams();
   const location = useLocation();
+  const [activeTab, setActiveTab] = useState('overview');
 
   // Na ausência de uma API, podemos aceitar dados via state (opcional) ou carregar conteúdo fictício
   const vaga = location.state?.vaga || getVagaFicticia(id);
@@ -18,68 +20,108 @@ export default function VagaDetail() {
       </div>
 
       <div className="vaga-detail-body">
-        <section className="vaga-section vaga-descricao">
-          <h2>Sobre a vaga</h2>
-          <p>{vaga.descricao}</p>
-        </section>
+        <div className="tabs">
+          <button
+            className={`tab-button ${activeTab === 'overview' ? 'active' : ''}`}
+            onClick={() => setActiveTab('overview')}
+          >Visão Geral</button>
+          <button
+            className={`tab-button ${activeTab === 'responsabilidades' ? 'active' : ''}`}
+            onClick={() => setActiveTab('responsabilidades')}
+          >Responsabilidades</button>
+          <button
+            className={`tab-button ${activeTab === 'requisitos' ? 'active' : ''}`}
+            onClick={() => setActiveTab('requisitos')}
+          >Requisitos</button>
+          <button
+            className={`tab-button ${activeTab === 'beneficios' ? 'active' : ''}`}
+            onClick={() => setActiveTab('beneficios')}
+          >Benefícios</button>
+          <button
+            className={`tab-button ${activeTab === 'candidatar' ? 'active' : ''}`}
+            onClick={() => setActiveTab('candidatar')}
+          >Candidatar-se</button>
+          <a href={vagaDesc} className="tab-button download-btn" download={`descricao-vaga-${id}.txt`}>Download (descrição)</a>
+        </div>
 
-        <section className="vaga-section vaga-responsabilidades">
-          <h2>Responsabilidades</h2>
-          <ul>
-            {vaga.responsabilidades.map((r, i) => (
-              <li key={i}>{r}</li>
-            ))}
-          </ul>
-        </section>
+        {activeTab === 'overview' && (
+          <section className="vaga-section vaga-descricao">
+            <h2>Sobre a vaga</h2>
+            <p>{vaga.descricao}</p>
+            <p className="vaga-extra-note">Esta é uma simulação detalhada: os dados são fictícios e servem apenas para demonstração.</p>
+          </section>
+        )}
 
-        <section className="vaga-section vaga-requisitos">
-          <h2>Requisitos</h2>
-          <ul>
-            {vaga.requisitos.map((r, i) => (
-              <li key={i}>{r}</li>
-            ))}
-          </ul>
-        </section>
+        {activeTab === 'responsabilidades' && (
+          <section className="vaga-section vaga-responsabilidades">
+            <h2>Responsabilidades</h2>
+            <ul>
+              {vaga.responsabilidades.map((r, i) => (
+                <li key={i}>{r}</li>
+              ))}
+            </ul>
+          </section>
+        )}
 
-        <section className="vaga-section vaga-acessibilidade">
-          <h2>Acessibilidade e Benefícios</h2>
-          <p>{vaga.acessibilidade}</p>
-          <ul>
-            {vaga.beneficios.map((b, i) => (
-              <li key={i}>{b}</li>
-            ))}
-          </ul>
-        </section>
+        {activeTab === 'requisitos' && (
+          <section className="vaga-section vaga-requisitos">
+            <h2>Requisitos</h2>
+            <ul>
+              {vaga.requisitos.map((r, i) => (
+                <li key={i}>{r}</li>
+              ))}
+            </ul>
+          </section>
+        )}
 
-        <section className="vaga-section vaga-como-se-candidatar">
-          <h2>Como se candidatar</h2>
-          <p>
-            Esta é uma página de vaga fictícia. Para simular uma candidatura, você pode enviar seu currículo
-            para <a href="mailto:equipeproceder2025@gmail.com">equipeproceder2025@gmail.com</a> com o assunto <strong>Vaga: {vaga.titulo}</strong>.
-          </p>
-          <p>
-            Também oferecemos um formulário simplificado abaixo (simulação) para que possamos demonstrar a experiência do usuário.
-          </p>
-          <form className="vaga-candidatura-form" onSubmit={(e) => { e.preventDefault(); alert('Candidatura simulada enviada. (Fictício)'); e.target.reset(); }}>
-            <label>
-              Nome completo
-              <input type="text" name="nome" required />
-            </label>
-            <label>
-              Email
-              <input type="email" name="email" required />
-            </label>
-            <label>
-              Telefone
-              <input type="tel" name="telefone" />
-            </label>
-            <label>
-              Mensagem (opcional)
-              <textarea name="mensagem" rows={4}></textarea>
-            </label>
-            <button type="submit" className="botao-candidatar-detalhe">Simular Candidatura</button>
-          </form>
-        </section>
+        {activeTab === 'beneficios' && (
+          <section className="vaga-section vaga-acessibilidade">
+            <h2>Acessibilidade e Benefícios</h2>
+            <p>{vaga.acessibilidade}</p>
+
+            <h3 className="timeline-title">Linha do tempo dos benefícios</h3>
+            <ol className="benefits-timeline">
+              {vaga.beneficios.map((b, i) => (
+                <li key={i} className="timeline-item">
+                  <div className="timeline-marker" />
+                  <div className="timeline-content">
+                    <strong>{i+1}. {b}</strong>
+                    <p>Implementação prevista: { (i+1) * 3 } meses após contratação (simulado).</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
+
+        {activeTab === 'candidatar' && (
+          <section className="vaga-section vaga-como-se-candidatar">
+            <h2>Como se candidatar</h2>
+            <p>
+              Esta é uma página de vaga fictícia. Para simular uma candidatura, você pode enviar seu currículo
+              para <a href="mailto:equipeproceder2025@gmail.com">equipeproceder2025@gmail.com</a> com o assunto <strong>Vaga: {vaga.titulo}</strong>.
+            </p>
+            <form className="vaga-candidatura-form" onSubmit={(e) => { e.preventDefault(); alert('Candidatura simulada enviada. (Fictício)'); e.target.reset(); }}>
+              <label>
+                Nome completo
+                <input type="text" name="nome" required />
+              </label>
+              <label>
+                Email
+                <input type="email" name="email" required />
+              </label>
+              <label>
+                Telefone
+                <input type="tel" name="telefone" />
+              </label>
+              <label>
+                Mensagem (opcional)
+                <textarea name="mensagem" rows={4}></textarea>
+              </label>
+              <button type="submit" className="botao-candidatar-detalhe">Simular Candidatura</button>
+            </form>
+          </section>
+        )}
 
         <div className="vaga-detail-footer">
           <Link to="/vagas-pcd" className="voltar-link">← Voltar para Vagas PCD</Link>

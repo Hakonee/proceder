@@ -64,6 +64,45 @@
   text-decoration: none;
 }
 
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.tab-button {
+  background: #f3f6fb;
+  border: 1px solid #e6eefb;
+  color: #26476b;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.tab-button:hover { background: #e9f1ff; }
+.tab-button.active { background: #2b7de9; color: #fff; border-color: #2b7de9; }
+.download-btn { text-decoration: none; display: inline-flex; align-items: center; }
+
+.vaga-extra-note { color: #666; font-size: 0.95rem; margin-top: 8px; }
+
+/* Timeline */
+.timeline-title { margin-top: 12px; font-size: 1rem; }
+.benefits-timeline { list-style: none; padding: 0; margin: 12px 0 0 0; position: relative; }
+.benefits-timeline::before {
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #e6eefb;
+}
+.timeline-item { position: relative; padding-left: 40px; margin-bottom: 18px; }
+.timeline-marker { position: absolute; left: 8px; top: 6px; width: 16px; height: 16px; border-radius: 50%; background: #2b7de9; }
+.timeline-content strong { display: block; }
+.timeline-content p { margin: 6px 0 0 0; color: #555; }
+
 @media (max-width: 768px) {
   .vaga-detail-container { padding: 14px; margin: 20px; }
   .vaga-detail-title { font-size: 1.4rem; }
