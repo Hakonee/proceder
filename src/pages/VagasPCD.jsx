@@ -63,6 +63,126 @@ export default function VagasPCD() {
       ],
       linkCandidatura: "#", // Link fictício
       acessibilidade: "Ambiente com iluminação adaptável, softwares com recursos de acessibilidade, equipe de apoio."
+    },
+    {
+      id: 5,
+      titulo: "Atendente de Atendimento ao Cliente",
+      empresa: "Telecom Brasil",
+      local: "São Paulo, SP (Remoto)",
+      descricao: "Somos uma empresa telecomunicações em expansão e buscamos Atendentes de Atendimento ao Cliente apaixonados por ajudar. Você será o ponto de contato principal para resolver dúvidas e problemas dos nossos clientes, em um ambiente colaborativo e inclusivo.",
+      requisitos: [
+        "Ensino médio completo",
+        "Boa comunicação e empatia",
+        "Capacidade de resolver problemas",
+        "Experiência em atendimento ao público (preferencial)"
+      ],
+      linkCandidatura: "#", // Link fictício
+      acessibilidade: "Suporte total em home office com tecnologias adaptadas, horários flexíveis, equipe de apoio por vídeo chamada."
+    },
+    {
+      id: 6,
+      titulo: "Operador(a) de Logística",
+      empresa: "LogMove Transportes",
+      local: "Curitiba, PR",
+      descricao: "A LogMove está buscando um(a) Operador(a) de Logística para auxiliar no controle de estoque, organização de cargas e movimentação de materiais. É uma excelente oportunidade para quem gosta de trabalho prático e quer contribuir para a eficiência operacional.",
+      requisitos: [
+        "Ensino fundamental completo",
+        "Disponibilidade para trabalhar em turnos",
+        "Noções de segurança do trabalho",
+        "Experiência em armazém ou logística (desejável)"
+      ],
+      linkCandidatura: "#", // Link fictício
+      acessibilidade: "Equipamentos ergonômicos, ajustes nas rotas e tarefas, elevadores e rampas de acesso."
+    },
+    {
+      id: 7,
+      titulo: "Técnico(a) em Saúde - Auxiliar de Enfermagem",
+      empresa: "Clínica Bem-Estar",
+      local: "Brasília, DF",
+      descricao: "A Clínica Bem-Estar procura um(a) Auxiliar de Enfermagem para integrar nossa equipe de saúde. Você apoiará os profissionais na prestação de cuidados aos pacientes, sempre com empatia e dedicação. Valorizamos a inclusão e o respeito pela diversidade.",
+      requisitos: [
+        "Curso técnico em Enfermagem ou certificação equivalente",
+        "Registro no COREN (Conselho Regional de Enfermagem)",
+        "Comunicação clara e responsabilidade",
+        "Capacidade de trabalhar em equipe"
+      ],
+      linkCandidatura: "#", // Link fictício
+      acessibilidade: "Espaço de trabalho adaptado, horários flexíveis, materiais em braille e áudio disponíveis."
+    },
+    {
+      id: 8,
+      titulo: "Especialista em Mídias Sociais",
+      empresa: "Digital Mark Agency",
+      local: "Salvador, BA (Remoto)",
+      descricao: "Procuramos um(a) Especialista em Mídias Sociais para gerenciar nossas estratégias de redes sociais. Você criará conteúdo engajador, analisará métricas e ajudará a construir uma comunidade forte em torno de nossas marcas.",
+      requisitos: [
+        "Experiência com plataformas: Instagram, Facebook, TikTok e LinkedIn",
+        "Conhecimento de ferramentas de análise e agendamento",
+        "Criatividade e visão estratégica",
+        "Noções de copywriting"
+      ],
+      linkCandidatura: "#", // Link fictício
+      acessibilidade: "Trabalho 100% remoto, horários adaptados, suporte total com softwares de acessibilidade."
+    },
+    {
+      id: 9,
+      titulo: "Professor(a) de Reforço Escolar",
+      empresa: "Instituto Aprender Juntos",
+      local: "Campinas, SP",
+      descricao: "O Instituto Aprender Juntos está selecionando Professores(as) para trabalhar com reforço escolar em áreas como Matemática, Português e Inglês. Você terá autonomia para preparar aulas adaptadas e contribuir para o sucesso educacional de nossos alunos.",
+      requisitos: [
+        "Ensino superior completo na área desejada",
+        "Experiência em docência ou tutoria",
+        "Metodologia pedagógica adaptada",
+        "Paciência e dedicação"
+      ],
+      linkCandidatura: "#", // Link fictício
+      acessibilidade: "Salas adaptadas com tecnologia assistiva, horários flexíveis, materiais em diversos formatos."
+    },
+    {
+      id: 10,
+      titulo: "Consultor(a) de Recursos Humanos",
+      empresa: "HR Solutions Consultoria",
+      local: "Recife, PE (Remoto)",
+      descricao: "Buscamos um(a) Consultor(a) de RH para ajudar empresas a implementar políticas de inclusão e diversidade. Você será responsável por elaborar estratégias, capacitar equipes e acompanhar indicadores de inclusão de pessoas com deficiência.",
+      requisitos: [
+        "Formação em Administração, Psicologia ou Pedagogia",
+        "Conhecimento em políticas de inclusão e acessibilidade",
+        "Experiência em consultoria ou RH (mínimo 2 anos)",
+        "Comunicação clara e pensamento crítico"
+      ],
+      linkCandidatura: "#", // Link fictício
+      acessibilidade: "Trabalho remoto integral, suporte completo com tecnologias adaptadas, reuniões com intérprete de libras."
+    },
+    {
+      id: 11,
+      titulo: "Redator(a) de Conteúdo",
+      empresa: "Content Hub Brasil",
+      local: "Fortaleza, CE (Remoto)",
+      descricao: "A Content Hub Brasil procura um(a) Redator(a) de Conteúdo para produzir textos de qualidade para blogs, newsletters e redes sociais. Se você é criativo e tem paixão por escrita, esta é uma oportunidade perfeita para você!",
+      requisitos: [
+        "Excelente domínio da língua portuguesa",
+        "Experiência em redação de conteúdo para web",
+        "Criatividade e capacidade de adaptação",
+        "Conhecimento de SEO (diferenciais)"
+      ],
+      linkCandidatura: "#", // Link fictício
+      acessibilidade: "Trabalho 100% remoto, leitores de tela suportados, horários flexíveis e autônomos."
+    },
+    {
+      id: 12,
+      titulo: "Especialista em Qualidade (QA) - Testador(a)",
+      empresa: "QualityCode Solutions",
+      local: "Manaus, AM (Remoto)",
+      descricao: "Procuramos um(a) Especialista em Qualidade para testar softwares e garantir que estejam acessíveis e funcionais. Você será responsável por identificar bugs, documentar problemas e contribuir para um produto final de excelente qualidade.",
+      requisitos: [
+        "Conhecimento de testes manuais e/ou automatizados",
+        "Familiaridade com ferramentas de teste (Selenium, Cypress, etc.)",
+        "Atenção aos detalhes",
+        "Experiência com testes de acessibilidade (WCAG)"
+      ],
+      linkCandidatura: "#", // Link fictício
+      acessibilidade: "Remoto total, softwares com suporte a acessibilidade, comunidade inclusiva e colaborativa."
     }
   ];
 
